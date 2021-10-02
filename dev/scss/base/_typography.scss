@@ -5,8 +5,10 @@
 body{
 
     font-family: 'Saira',  sans-serif;
-    font-family: 'Zilla Slab',  serif;
-
+  
+    h1,h2{
+        font-family: 'Zilla Slab',  serif;  
+    }
 
     h1,h2,h3,h4{
         margin: 0;
@@ -18,10 +20,10 @@ body{
         padding: 0;
     }
     
+    a{
+
+    text-decoration: none;
+    }
 
 }
 
-h1{
-    font-size: rem-calc(100);
-    color: red;
-}

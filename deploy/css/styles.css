@@ -366,6 +366,8 @@ ul li {
 ============= */
 body {
   font-family: "Saira", sans-serif;
+}
+body h1, body h2 {
   font-family: "Zilla Slab", serif;
 }
 body h1, body h2, body h3, body h4 {
@@ -376,10 +378,8 @@ body p {
   margin: 0;
   padding: 0;
 }
-
-h1 {
-  font-size: 100;
-  color: red;
+body a {
+  text-decoration: none;
 }
 
 /* =============
