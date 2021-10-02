@@ -1,0 +1,58 @@
+#hero{
+padding: 200px 0px;
+div{
+    #hero-content{
+        align-items: center;
+        background-size: cover;
+        background-image: url('../img/hero/image1.jpg');
+        height: 876px;
+        background-position: center;
+        z-index: 0;
+
+        ul{
+            height: 100%;
+            border: 1px solid red;
+            display: grid;
+            grid-template-areas: ". leaf1 hero leaf2 .";
+            grid-template-columns: auto 20% 1000px 20% auto;
+            #header1{
+                border: 1px solid red;
+                grid-area: hero;
+                text-align: center;
+                color: white;
+            }
+            #l1{
+                border: 1px solid red;
+                grid-area: leaf1;
+                a{
+                    height: 12px;
+
+
+                    align-items: center;
+                    background-size: cover;
+                    background-image: url('../img/hero/leaves1.jpg');
+                    height: 876px;
+                    background-position: center;
+                    z-index: 100;
+                }
+            }
+            #l2{
+                border: 1px solid red;
+                grid-area: leaf2;
+                a{
+                    height: 12px;
+
+
+                    align-items: center;
+                    background-size: cover;
+                    background-image: url('../img/hero/leaves2.jpg');
+                    height: 876px;
+                    background-position: center;
+                    z-index: 100;
+                }
+        
+            }
+        }
+    }
+}
+}
