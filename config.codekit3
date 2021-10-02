@@ -9,6 +9,14 @@
   ],
   "creatorBuild" : "34127",
   "files" : {
+    "\/.gitattributes" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.gitattributes",
+      "oF" : 0
+    },
     "\/deploy\/css\/styles.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -268,7 +276,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 654453556.59066701,
-    "displayValue" : "Motion-F21-PM",
+    "displayValue" : "sara-motion",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-silver",
     "iconImageWasSetByUser" : 0

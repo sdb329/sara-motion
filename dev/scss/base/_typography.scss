@@ -1,14 +1,24 @@
 /* =============
     Typography
 ============= */
-h1,h2,h3,h4{
-    margin: 0;
-    padding: 0;
-}
 
-p{
-    margin: 0;
-    padding: 0;
+body{
+
+    font-family: 'Saira',  sans-serif;
+    font-family: 'Zilla Slab',  serif;
+
+
+    h1,h2,h3,h4{
+        margin: 0;
+        padding: 0;
+    }
+    
+    p{
+        margin: 0;
+        padding: 0;
+    }
+    
+
 }
 
 h1{
