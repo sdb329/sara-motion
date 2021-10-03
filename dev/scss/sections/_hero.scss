@@ -1,5 +1,5 @@
 #hero {
-    padding: 200px 0px;
+    padding: 50px 0px;
 
     div {
         #hero-content {
@@ -11,23 +11,23 @@
             z-index: 0;
 
             ul {
-                height: 100%;
-                border: 1px solid red;
+                height: 876px;
+                // border: 1px solid red;
                 display: grid;
                 grid-template-areas: ". leaf1 hero leaf2 .";
                 grid-template-columns: auto 20% 1000px 20% auto;
 
                 #header1 {
   
-                    border: 1px solid red;
+                    // border: 1px solid green;
                     grid-area: hero;
                     text-align: center;
-                    height: 100%;
-                    color: white;
+                    height: 876px;
+                    color: $offwhite;
                     position: center;
 
                     div {
-                        height: 100%;
+                        height: 876px;
 
                         display: flex;
                         flex-direction: column;
@@ -43,7 +43,9 @@
                             h1 {
                                 padding: 60px 0px;
                                 font-size: calc(7rem);
-                                z-index: 100;
+                                background: rgba(143, 87, 67, 0.9);
+                                z-index: 30;
+                                font-weight: 300;
 
                             }
                         
@@ -53,7 +55,7 @@
                 }
 
                 #l1 {
-                    border: 1px solid red;
+                    // border: 1px solid red;
                     grid-area: leaf1;
 
                     height: 12px;
@@ -68,25 +70,24 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     z-index: 50;
-                    margin: 450px 0px 0px 200px;
+                    margin: 500px 0px 0px 200px;
 
                 }
 
                 #l2 {
-                    border: 1px solid red;
+                    // border: 1px solid red;
                     grid-area: leaf2;
 
                     height: 12px;
 
-
-                    align-items: center;
                     background-image: url('../img/hero/leaves2.svg');
-                    height: 100%;
+                    height: 400px;
                     width: 100%;
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
-                    z-index: 100;
+                    z-index: 50;
+                    margin: 50px 0px 0px -250px;
 
 
                 }
