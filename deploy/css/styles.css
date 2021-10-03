@@ -554,18 +554,25 @@ header div aside a {
   grid-area: image;
   z-index: 50;
 }
-#content ul #box1 {
+#content ul #boxes-grid {
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-template-areas: "boxes .";
+}
+#content ul #boxes-grid #box1 {
+  grid-area: boxes;
   position: absolute;
-  width: 101px;
+  width: 10%;
   height: 1366px;
   left: 350px;
   top: 926px;
   background: #7D2B1B;
   z-index: 20;
 }
-#content ul #box2 {
+#content ul #boxes-grid #box2 {
+  grid-area: boxes;
   position: absolute;
-  width: 482px;
+  width: 35%;
   height: 1042px;
   left: 250px;
   top: 1125px;
@@ -573,9 +580,10 @@ header div aside a {
   box-sizing: border-box;
   z-index: 22;
 }
-#content ul #box3 {
+#content ul #boxes-grid #box3 {
+  grid-area: boxes;
   position: absolute;
-  width: 374px;
+  width: 35%;
   height: 971px;
   left: 53px;
   top: 1158px;
