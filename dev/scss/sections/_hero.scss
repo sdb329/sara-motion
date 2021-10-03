@@ -1,98 +1,134 @@
 #hero {
     padding: 50px 0px;
+height: 90vh;
+width: 100%;
+    
 
     div {
-        #hero-content {
+        overflow: hidden;
+
+        article{
             align-items: center;
             background-size: cover;
             
             background-image: url('../img/hero/image1.jpg');
             height: 876px;
             background-position: center;
-            z-index: 0;
+            display: flex;
 
-            ul {
-                height: 876px;
-                // border: 1px solid red;
-                display: grid;
-                grid-template-areas: ". leaf1 hero leaf2 .";
-                grid-template-columns: auto 20% auto 20% auto;
+        
+            #hero-content {
 
-                #header1 {
-  
-                    // border: 1px solid green;
-                    grid-area: hero;
-                    text-align: center;
+
+
+                       
+
+                   
+
+
+                ul {
                     height: 876px;
-                    color: $offwhite;
-                    position: center;
+                    // border: 1px solid red;
+                    display: grid;
+                    grid-template-areas: ". leaf1 hero leaf2 .";
+                    grid-template-columns: auto 20% auto 20% auto;
 
-                    div {
+                    
+    
+                    #header1 {
+      
+                        // border: 1px solid green;
+                        grid-area: hero;
+                        text-align: center;
                         height: 876px;
-
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-
-
-                        p {
-                            opacity: 0;
-                        }
-
-                            
-
-                            h1 {
-                                padding: 60px 0px;
-                                font-size: calc(7rem);
-                                background: rgba(143, 87, 67, 0.9);
-                                z-index: 30;
-                                font-weight: 300;
-
+                        color: $offwhite;
+                        position: center;
+    
+                        div {
+                            height: 876px;
+    
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+    
+    
+                            p {
+                                opacity: 0;
                             }
-                        
-
+    
+                                
+    
+                                h1 {
+                                    padding: 60px 0px;
+                                    font-size: calc(7rem);
+                                    background: rgba(143, 87, 67, 0.9);
+                                    z-index: 30;
+                                    font-weight: 300;
+    
+                                }
+                            
+    
+                        }
+    
                     }
-
+    
+                    #l1 {
+                        // border: 1px solid red;
+                        grid-area: leaf1;
+    
+                        height: 12px;
+    
+    
+    
+    
+                        background-image: url('../img/hero/leaves1.svg');
+                        width: 100%;
+                        height: 300px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        z-index: 50;
+                        margin: 500px 0px 0px 200px;
+    
+                    }
+    
+                    #l2 {
+                        // border: 1px solid red;
+                        grid-area: leaf2;
+    
+                        height: 12px;
+    
+                        background-image: url('../img/hero/leaves2.svg');
+                        height: 400px;
+                        width: 100%;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        z-index: 50;
+                        margin: 15px 0px 0px -200px;
+    
+    
+                    }
                 }
 
-                #l1 {
-                    // border: 1px solid red;
-                    grid-area: leaf1;
-
-                    height: 12px;
 
 
+            
+
+            
 
 
-                    background-image: url('../img/hero/leaves1.svg');
-                    width: 100%;
-                    height: 300px;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    z-index: 50;
-                    margin: 500px 0px 0px 200px;
 
-                }
+        
+       
 
-                #l2 {
-                    // border: 1px solid red;
-                    grid-area: leaf2;
-
-                    height: 12px;
-
-                    background-image: url('../img/hero/leaves2.svg');
-                    height: 400px;
-                    width: 100%;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    z-index: 50;
-                    margin: 15px 0px 0px -250px;
+        
+    }
 
 
-                }
-            }
+
         }
+
+       
     }
 }
