@@ -6,13 +6,14 @@ width: 100%;
 
     div {
         overflow: hidden;
+        margin-top: -50px;
 
         article{
             align-items: center;
             background-size: cover;
             
             background-image: url('../img/hero/image1.jpg');
-            height: 876px;
+            height: 926px;
             background-position: center;
             display: flex;
 

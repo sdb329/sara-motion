@@ -5,7 +5,7 @@
         grid-template-columns: auto 20% 20% 20% 20% auto;
         grid-template-areas: ". title title title title ."
         ". image image text text .";
-        margin-top: 50px;
+        margin-top: -75px;
 
         // border: 1px solid red;
 
@@ -13,7 +13,7 @@
             // border: 1px solid green;
             grid-area: title;
             text-align: center;
-            padding-bottom: 125px;
+            padding-bottom: 175px;
             color: $orange;
             
 

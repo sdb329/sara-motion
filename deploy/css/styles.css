@@ -456,12 +456,13 @@ header div aside a {
 }
 #hero div {
   overflow: hidden;
+  margin-top: -50px;
 }
 #hero div article {
   align-items: center;
   background-size: cover;
   background-image: url("../img/hero/image1.jpg");
-  height: 876px;
+  height: 926px;
   background-position: center;
   display: flex;
 }
@@ -523,12 +524,12 @@ header div aside a {
   display: grid;
   grid-template-columns: auto 20% 20% 20% 20% auto;
   grid-template-areas: ". title title title title ." ". image image text text .";
-  margin-top: 50px;
+  margin-top: -75px;
 }
 #content ul #title {
   grid-area: title;
   text-align: center;
-  padding-bottom: 125px;
+  padding-bottom: 175px;
   color: #B9542F;
 }
 #content ul #title h2 {
