@@ -518,15 +518,31 @@ header div aside a {
   display: grid;
   grid-template-columns: auto 20% 20% 20% 20% auto;
   grid-template-areas: ". title title title title ." ". image image text text .";
-  border: 1px solid red;
+  margin-top: 50px;
 }
 #content ul #title {
-  border: 1px solid green;
   grid-area: title;
   text-align: center;
+  padding-bottom: 125px;
+  color: #B9542F;
+}
+#content ul #title h2 {
+  font-weight: 300;
+  font-size: calc(4rem);
 }
 #content ul #text {
   grid-area: text;
+  font-weight: 300;
+  font-size: calc(1.5rem);
+  line-height: 1.5;
+  padding-left: 95px;
+  color: #7D2B1B;
+}
+#content ul #text div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 #content ul #imagec {
   align-items: center;
@@ -534,6 +550,35 @@ header div aside a {
   background-image: url("../img/content/image2.jpg");
   height: 800px;
   background-position: center;
-  z-index: 0;
+  z-index: 30;
   grid-area: image;
+  z-index: 50;
+}
+#content ul #box1 {
+  position: absolute;
+  width: 101px;
+  height: 1366px;
+  left: 350px;
+  top: 926px;
+  background: #7D2B1B;
+  z-index: 20;
+}
+#content ul #box2 {
+  position: absolute;
+  width: 482px;
+  height: 1042px;
+  left: 250px;
+  top: 1125px;
+  border: 10px solid #C8BDB4;
+  box-sizing: border-box;
+  z-index: 22;
+}
+#content ul #box3 {
+  position: absolute;
+  width: 374px;
+  height: 971px;
+  left: 53px;
+  top: 1158px;
+  background: #B9542F;
+  z-index: 21;
 }
