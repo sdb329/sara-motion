@@ -464,13 +464,13 @@ header div aside a {
   background-image: url("../img/hero/image1.jpg");
   height: 926px;
   background-position: center;
-  display: flex;
 }
 #hero div article #hero-content ul {
   height: 876px;
   display: grid;
   grid-template-areas: ". leaf1 hero leaf2 .";
   grid-template-columns: auto 20% auto 20% auto;
+  position: center;
 }
 #hero div article #hero-content ul #header1 {
   grid-area: hero;
