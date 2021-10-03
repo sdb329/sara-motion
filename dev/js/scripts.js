@@ -6,5 +6,10 @@ import { gsap } from "gsap";
 
 const mainTL = gsap.timeline();
 
-mainTL.from("#hero",{duration:2,alpha:0});
+mainTL.from("#hero",{duration:5,alpha:0, scale:2})
+        .from
+
+
+
+;
 
