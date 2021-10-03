@@ -464,7 +464,7 @@ header div aside a {
   height: 876px;
   display: grid;
   grid-template-areas: ". leaf1 hero leaf2 .";
-  grid-template-columns: auto 20% 1000px 20% auto;
+  grid-template-columns: auto 20% auto 20% auto;
 }
 #hero div #hero-content ul #header1 {
   grid-area: hero;
@@ -511,5 +511,29 @@ header div aside a {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 50;
-  margin: 50px 0px 0px -250px;
+  margin: 15px 0px 0px -250px;
+}
+
+#content ul {
+  display: grid;
+  grid-template-columns: auto 20% 20% 20% 20% auto;
+  grid-template-areas: ". title title title title ." ". image image text text .";
+  border: 1px solid red;
+}
+#content ul #title {
+  border: 1px solid green;
+  grid-area: title;
+  text-align: center;
+}
+#content ul #text {
+  grid-area: text;
+}
+#content ul #imagec {
+  align-items: center;
+  background-size: cover;
+  background-image: url("../img/content/image2.jpg");
+  height: 800px;
+  background-position: center;
+  z-index: 0;
+  grid-area: image;
 }

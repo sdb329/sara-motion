@@ -5,6 +5,7 @@
         #hero-content {
             align-items: center;
             background-size: cover;
+            
             background-image: url('../img/hero/image1.jpg');
             height: 876px;
             background-position: center;
@@ -15,7 +16,7 @@
                 // border: 1px solid red;
                 display: grid;
                 grid-template-areas: ". leaf1 hero leaf2 .";
-                grid-template-columns: auto 20% 1000px 20% auto;
+                grid-template-columns: auto 20% auto 20% auto;
 
                 #header1 {
   
@@ -87,7 +88,7 @@
                     background-repeat: no-repeat;
                     background-position: center;
                     z-index: 50;
-                    margin: 50px 0px 0px -250px;
+                    margin: 15px 0px 0px -250px;
 
 
                 }

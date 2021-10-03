@@ -1,0 +1,36 @@
+#content{
+
+    ul{
+        display: grid;
+        grid-template-columns: auto 20% 20% 20% 20% auto;
+        grid-template-areas: ". title title title title ."
+        ". image image text text .";
+ 
+
+        border: 1px solid red;
+
+        #title{
+            border: 1px solid green;
+            grid-area: title;
+            text-align: center;
+
+        }
+        #text{
+            grid-area: text;
+        }
+        #imagec{
+
+            align-items: center;
+            background-size: cover;
+            background-image: url('../img/content/image2.jpg');
+            height: 800px;
+            background-position: center;
+            z-index: 0;
+
+            grid-area: image;
+
+
+        }
+
+    }
+}
