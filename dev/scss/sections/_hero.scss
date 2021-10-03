@@ -2,7 +2,10 @@
     padding: 50px 0px;
 
     div {
+
+       
         #hero-content {
+           
             align-items: center;
             background-size: cover;
             
@@ -10,7 +13,6 @@
             height: 876px;
             background-position: center;
             z-index: 0;
-
             ul {
                 height: 876px;
                 // border: 1px solid red;
@@ -47,6 +49,8 @@
                                 background: rgba(143, 87, 67, 0.9);
                                 z-index: 30;
                                 font-weight: 300;
+
+                                
 
                             }
                         
