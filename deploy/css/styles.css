@@ -484,10 +484,15 @@ header div aside a {
 }
 #hero div #hero-content ul #header1 div h1 {
   padding: 60px 0px;
-  font-size: calc(7rem);
+  font-size: calc(2rem);
   background: rgba(143, 87, 67, 0.9);
   z-index: 30;
   font-weight: 300;
+}
+@media (min-width: 768px) {
+  #hero div #hero-content ul #header1 div h1 {
+    font-size: calc(7rem);
+  }
 }
 #hero div #hero-content ul #l1 {
   grid-area: leaf1;
@@ -564,7 +569,7 @@ header div aside a {
   position: absolute;
   width: 10%;
   height: 1366px;
-  left: 350px;
+  left: 20vw;
   top: 926px;
   background: #7D2B1B;
   z-index: 20;
@@ -574,7 +579,7 @@ header div aside a {
   position: absolute;
   width: 35%;
   height: 1042px;
-  left: 250px;
+  left: 6vw;
   top: 1125px;
   border: 10px solid #C8BDB4;
   box-sizing: border-box;
@@ -585,7 +590,7 @@ header div aside a {
   position: absolute;
   width: 35%;
   height: 971px;
-  left: 53px;
+  left: 2vw;
   top: 1158px;
   background: #B9542F;
   z-index: 21;

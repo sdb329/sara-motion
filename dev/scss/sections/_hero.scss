@@ -45,12 +45,14 @@
 
                             h1 {
                                 padding: 60px 0px;
-                                font-size: calc(7rem);
+                                font-size: calc(2rem);
                                 background: rgba(143, 87, 67, 0.9);
                                 z-index: 30;
                                 font-weight: 300;
 
-                                
+                                @include md{
+                                    font-size: calc(7rem);
+                                }
 
                             }
                         
