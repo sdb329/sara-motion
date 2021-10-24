@@ -420,7 +420,7 @@ nav ul li {
 }
 nav ul li a:link, nav ul li a:visited {
   color: #C8BDB4;
-  font-size: calc(1.2rem);
+  font-size: 1.2rem;
   font-weight: 300;
   transition: 0.2s;
 }
@@ -449,6 +449,13 @@ header div aside a {
 /* =============
     Footer
 ============= */
+#preloader {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  border: 1px solid red;
+}
 #hero {
   padding: 50px 0px;
 }
@@ -484,14 +491,14 @@ header div aside a {
 }
 #hero div #hero-content ul #header1 div h1 {
   padding: 60px 0px;
-  font-size: calc(2rem);
+  font-size: 2rem;
   background: rgba(143, 87, 67, 0.9);
   z-index: 30;
   font-weight: 300;
 }
 @media (min-width: 768px) {
   #hero div #hero-content ul #header1 div h1 {
-    font-size: calc(7rem);
+    font-size: 7rem;
   }
 }
 #hero div #hero-content ul #l1 {
@@ -533,12 +540,12 @@ header div aside a {
 }
 #content ul #title h2 {
   font-weight: 300;
-  font-size: calc(4rem);
+  font-size: 4rem;
 }
 #content ul #text {
   grid-area: text;
   font-weight: 300;
-  font-size: calc(1.5rem);
+  font-size: 1.5rem;
   line-height: 1.5;
   padding-left: 95px;
   color: #7D2B1B;
