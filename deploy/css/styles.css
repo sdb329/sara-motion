@@ -460,6 +460,10 @@ header div aside a {
   z-index: 1000;
   border: 1px solid red;
 }
+#preloader > svg .hidden {
+  visibility: hidden;
+}
+
 #hero {
   padding: 50px 0px;
 }

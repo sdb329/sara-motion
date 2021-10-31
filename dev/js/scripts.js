@@ -1,7 +1,17 @@
 // import { gsap } from "gsap";
-import { gsap } from "gsap";
-import { GSDevTools } from "gsap/GSDevTools";
-gsap.registerPlugin(GSDevTools);
+import {
+    gsap
+} from "gsap";
+import {
+    GSDevTools
+} from "gsap/GSDevTools";
+import {
+    MorphSVGPlugin
+} from "gsap/MorphSVGPlugin";
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
+// gsap.registerPlugin(MorphSVGPlugin);
+
+
 
 // // const 
 // // var
@@ -12,79 +22,135 @@ const mainTL = gsap.timeline();
 
 
 
-// function dirtAppearing(){
+function dirtAppearing() {
+    const tl = gsap.timeline();
+    tl.from("#dirt", {
+        duration: 2,
+        alpha: 0,
+        ease: "none"
+    });
+    return tl;
+}
 
-    
-// }
+function babyPlantGrowing() {
+    const tl = gsap.timeline();
+    tl.from("#morph-right-plant1", {
+        duration: 1,
+        alpha: 0
+    }, "appearStemSameTime");
+    tl.from("#morph-left-plant1", {
+        duration: 1,
+        alpha: 0
+    }, "appearStemSameTime");
 
-// function babyPlantGrowing(){
+    tl.to("#morph-right-plant1", {
+        duration: 2,
+        morphSVG: "#stem-right1"
+    }, "stemSameTime");
+    tl.to("#morph-left-plant1", {
+        duration: 2,
+        morphSVG: "#stem-left1"
+    }, "stemSameTime");
 
-    
-// }
+
+    tl.from("#morph-right-leaf1", {
+        duration: 1,
+        alpha: 0
+    }, "appearLeafSameTime");
+    tl.from("#morph-left-leaf1", {
+        duration: 1,
+        alpha: 0
+    }, "appearLeafSameTime");
+
+
+    tl.to("#morph-right-leaf1", {
+        duration: 1,
+        morphSVG: "#big-leaf-right1"
+    }, "leafSameTime");
+    tl.to("#morph-left-leaf1", {
+        duration: 1,
+        morphSVG: "#small-leaf-left1"
+    }, "leafSameTime");
+
+    tl.to("#morph-left-leaf1", {
+        duration: 1,
+        morphSVG: "#small-leaf-left1"
+    }, "leafSameTime");
+
+
+
+
+
+    return tl;
+
+}
 
 
 // function plant1growing(){
 
-    
+
 // }
 
 // function plant2growing(){
 
-    
+
 // }
 
 // function plant3growing(){
 
-    
+
 // }
 
 
 // function plant4growing(){
 
-    
+
 // }
 
 // function babyPumpkinGrowing(){
 
-    
+
 // }
 
 // function fullGrownPumpkinDropping(){
 
-    
+
 // }
 
 // function fullGrownPupmkinZoomIn(){
 
-    
+
 // }
 
 
 // function PumpkinCarving(){
 
-    
+
 // }
 
-function PumpkinLightingUp(){
-    const tl =gsap.timeline();
-    tl.to("#light",{duration:1, scale:2, y:"-=600"});
-    return tl;
-    
-}
+// function PumpkinLightingUp(){
+//     const tl =gsap.timeline();
+//     tl.to("#light",{duration:1, scale:2, y:"-=600"});
+//     return tl;
 
-function LEAVES(){
-    const tl =gsap.timeline();
-    tl.to("#leaves",{duration:1, scale:2, y:"-=600"});
-    return tl;
-}
+// }
 
-mainTL.add(LEAVES())
-.add(PumpkinLightingUp());
+// function LEAVES(){
+//     const tl =gsap.timeline();
+//     tl.to("#leaves",{duration:1, scale:2, y:"-=600"});
+//     return tl;
+// }
+
+mainTL
+    .add(dirtAppearing())
+    .add(babyPlantGrowing())
+
 
 
 
 
 GSDevTools.create();
+MorphSVGPlugin.create();
 
 
 
@@ -115,4 +181,3 @@ GSDevTools.create();
 
 
 // ;
-
