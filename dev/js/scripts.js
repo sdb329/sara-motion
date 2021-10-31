@@ -72,11 +72,17 @@ function babyPlantGrowing() {
         morphSVG: "#small-leaf-left1"
     }, "leafSameTime");
 
-    tl.to("#morph-left-leaf1", {
+    tl.to("#left-bplant", {
         duration: 1,
-        morphSVG: "#small-leaf-left1"
-    }, "leafSameTime");
+        rotation: -70,
+        transformOrigin:"bottom"
+    }, "split");
 
+    tl.to("#right-bplant", {
+        duration: 1,
+        rotation: 50,
+        transformOrigin:"bottom -1%"
+    }, "split");
 
 
 
