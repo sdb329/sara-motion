@@ -1,15 +1,12 @@
 // import { gsap } from "gsap";
-import {
-    gsap
-} from "gsap";
-import {
-    GSDevTools
-} from "gsap/GSDevTools";
-import {
-    MorphSVGPlugin
-} from "gsap/MorphSVGPlugin";
-gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
-// gsap.registerPlugin(MorphSVGPlugin);
+
+
+
+import { gsap } from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin);
 
 
 
@@ -75,13 +72,13 @@ function babyPlantGrowing() {
     tl.to("#left-bplant", {
         duration: 1,
         rotation: -70,
-        transformOrigin:"bottom"
+        transformOrigin: "bottom"
     }, "split");
 
     tl.to("#right-bplant", {
         duration: 1,
         rotation: 50,
-        transformOrigin:"bottom -1%"
+        transformOrigin: "bottom -1%"
     }, "split");
 
 
@@ -92,31 +89,147 @@ function babyPlantGrowing() {
 }
 
 
-// function plant1growing(){
+function plant1growing() {
+    const tl = gsap.timeline();
+    tl.from("#stem1", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#leaf-morph1", {
+        duration: .1,
+        alpha: 0
+    });
+    tl.to("#leaf-morph1", {
+        duration: 1,
+        morphSVG: "#leaf1"
+    });
+    tl.from("#main-line1", {
+        duration: 1,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#outward-lines1", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    });
 
 
-// }
+    return tl;
 
-// function plant2growing(){
+}
+
+function plant2growing() {
+    const tl = gsap.timeline();
+    tl.from("#stem2", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#leaf-morph2", {
+        duration: .1,
+        alpha: 0
+    });
+    tl.to("#leaf-morph2", {
+        duration: 1,
+        morphSVG: "#leaf2"
+    });
+    tl.from("#main-line2", {
+        duration: 1,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#outward-lines2", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0,
+        ease: "back"
+    });
 
 
-// }
+    return tl;
 
-// function plant3growing(){
+}
+
+function plant3growing() {
+    const tl = gsap.timeline();
+    tl.from("#stem3", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#leaf-morph3", {
+        duration: .1,
+        alpha: 0
+    });
+    tl.to("#leaf-morph3", {
+        duration: 1,
+        morphSVG: "#leaf3"
+    });
+    tl.from("#main-line3", {
+        duration: 1,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#outward-lines3", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0,
+        ease: "back"
+    });
 
 
-// }
+    return tl;
+
+}
+
+function plant4growing() {
+    const tl = gsap.timeline();
+    tl.from("#stem4", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#leaf-morph4", {
+        duration: .1,
+        alpha: 0
+    });
+    tl.to("#leaf-morph4", {
+        duration: 1,
+        morphSVG: "#leaf4"
+    });
+    tl.from("#main-line4", {
+        duration: 1,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#outward-lines4", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0,
+        ease: "back"
+    });
 
 
-// function plant4growing(){
+    return tl;
 
+}
 
-// }
+function babyPumpkinGrowing(){
+    const tl = gsap.timeline();
+    tl.from("#baby-pumpkin", {
+        duration: .5,
+        y:"-=13",
+        scale:0
+    });
+    tl.to("#baby-pumpkin", {
+        duration: .1,
+        scale:2
+    });
+    return tl;
 
-// function babyPumpkinGrowing(){
-
-
-// }
+}
 
 // function fullGrownPumpkinDropping(){
 
@@ -150,13 +263,18 @@ function babyPlantGrowing() {
 mainTL
     .add(dirtAppearing())
     .add(babyPlantGrowing())
-
+    .add(plant1growing())
+    .add(plant2growing(), 10)
+    .add(plant4growing(), 12)
+    .add(plant3growing(), 14)
+    .add(babyPumpkinGrowing())
 
 
 
 
 GSDevTools.create();
 MorphSVGPlugin.create();
+DrawSVGPlugin.create();
 
 
 
