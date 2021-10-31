@@ -6,9 +6,8 @@ import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin);
-
-
+import { Flip } from "gsap/Flip";
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, Flip);
 
 // // const 
 // // var
@@ -219,22 +218,60 @@ function plant4growing() {
 function babyPumpkinGrowing(){
     const tl = gsap.timeline();
     tl.from("#baby-pumpkin", {
-        duration: .5,
+        duration: 3,
         y:"-=13",
         scale:0
     });
     tl.to("#baby-pumpkin", {
-        duration: .1,
-        scale:2
+        duration: 3,
+        scale:4,
+        rotate: -20
     });
+    tl.to("#baby-pumpkin", {
+        duration: 1,
+        alpha: 0,
+        
+        x:"-=20"
+    }, "-=1");
+    tl.from("#grown-up-pumpkin", {
+        duration: 1,
+        alpha: 0
+    }, "-=1");
+
+
     return tl;
 
 }
 
-// function fullGrownPumpkinDropping(){
+function fullGrownPumpkinDropping(){
+    const tl = gsap.timeline();
 
+    tl.to(".fade-up", {
+        duration: 1,
+        alpha: 0,
+        
+        y:"-=300"
+    });
 
-// }
+    tl.to("#grown-up-pumpkin", {
+        duration: 1,
+        alpha: 0,
+        rotation: 30,
+        scale: 2,
+        x:"-=70",
+        y:"-=70"
+    }, "-=1");
+
+    tl.from("#pumpkin", {
+        duration: 1,
+        alpha: 0,
+        x:"+=70",
+        y:"-=70"
+    }, "-=1");
+
+    return tl;
+
+}
 
 // function fullGrownPupmkinZoomIn(){
 
@@ -267,7 +304,8 @@ mainTL
     .add(plant2growing(), 10)
     .add(plant4growing(), 12)
     .add(plant3growing(), 14)
-    .add(babyPumpkinGrowing())
+    .add(babyPumpkinGrowing(), 16)
+    .add(fullGrownPumpkinDropping())
 
 
 
@@ -275,6 +313,7 @@ mainTL
 GSDevTools.create();
 MorphSVGPlugin.create();
 DrawSVGPlugin.create();
+Flip.create();
 
 
 
