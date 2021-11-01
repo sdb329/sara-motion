@@ -23,7 +23,7 @@ const mainTL = gsap.timeline();
 function dirtAppearing() {
     const tl = gsap.timeline();
     tl.from("#dirt", {
-        duration: 2,
+        duration: .2,
         alpha: 0,
         ease: "none"
     });
@@ -42,45 +42,15 @@ function babyPlantGrowing() {
     }, "appearStemSameTime");
 
     tl.to("#morph-right-plant1", {
-        duration: 2,
-        morphSVG: "#stem-right1"
+        duration: .5,
+        morphSVG: "#stem-right1",
+        ease: "none"
     }, "stemSameTime");
     tl.to("#morph-left-plant1", {
-        duration: 2,
-        morphSVG: "#stem-left1"
+        duration: .5,
+        morphSVG: "#stem-left1",
+        ease: "none"
     }, "stemSameTime");
-
-
-    tl.from("#morph-right-leaf1", {
-        duration: 1,
-        alpha: 0
-    }, "appearLeafSameTime");
-    tl.from("#morph-left-leaf1", {
-        duration: 1,
-        alpha: 0
-    }, "appearLeafSameTime");
-
-
-    tl.to("#morph-right-leaf1", {
-        duration: 1,
-        morphSVG: "#big-leaf-right1"
-    }, "leafSameTime");
-    tl.to("#morph-left-leaf1", {
-        duration: 1,
-        morphSVG: "#small-leaf-left1"
-    }, "leafSameTime");
-
-    tl.to("#left-bplant", {
-        duration: 1,
-        rotation: -70,
-        transformOrigin: "bottom"
-    }, "split");
-
-    tl.to("#right-bplant", {
-        duration: 1,
-        rotation: 50,
-        transformOrigin: "bottom -1%"
-    }, "split");
 
 
 
@@ -89,29 +59,64 @@ function babyPlantGrowing() {
 
 }
 
+    function babyLeafGrowing() {
+        const tl = gsap.timeline();
+        tl.from("#morph-right-leaf1", {
+            duration: .01,
+            alpha: 0
+        }, "appearLeafSameTime");
+        tl.from("#morph-left-leaf1", {
+            duration: .01,
+            alpha: 0
+        }, "appearLeafSameTime");
+    
+    
+        tl.to("#morph-right-leaf1", {
+            duration: 1,
+            morphSVG: "#big-leaf-right1"
+        }, "leafSameTime");
+        tl.to("#morph-left-leaf1", {
+            duration: 1,
+            morphSVG: "#small-leaf-left1"
+        }, "leafSameTime");
+    
+        tl.to("#left-bplant", {
+            duration: 1,
+            rotation: -70,
+            transformOrigin: "bottom"
+        }, "split");
+    
+        tl.to("#right-bplant", {
+            duration: 1,
+            rotation: 50,
+            transformOrigin: "bottom -1%"
+        }, "split");
+        return tl;
+    }
+
 
 function plant1growing() {
     const tl = gsap.timeline();
     tl.from("#stem1", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#leaf-morph1", {
-        duration: .1,
+        duration: .01,
         alpha: 0
     });
     tl.to("#leaf-morph1", {
-        duration: 1,
+        duration: .5,
         morphSVG: "#leaf1"
     });
     tl.from("#main-line1", {
-        duration: 1,
-        stagger: 0.1,
+        duration: .5,
+        stagger: 0.01,
         drawSVG: 0
     });
     tl.from("#outward-lines1", {
-        duration: 2,
+        duration: .5,
         stagger: 0.1,
         drawSVG: 0
     });
@@ -124,25 +129,25 @@ function plant1growing() {
 function plant2growing() {
     const tl = gsap.timeline();
     tl.from("#stem2", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#leaf-morph2", {
-        duration: .1,
+        duration: .01,
         alpha: 0
     });
     tl.to("#leaf-morph2", {
-        duration: 1,
+        duration: .5,
         morphSVG: "#leaf2"
     });
     tl.from("#main-line2", {
-        duration: 1,
+        duration: .5,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#outward-lines2", {
-        duration: 2,
+        duration: .5,
         stagger: 0.1,
         drawSVG: 0,
         ease: "back"
@@ -156,25 +161,25 @@ function plant2growing() {
 function plant3growing() {
     const tl = gsap.timeline();
     tl.from("#stem3", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#leaf-morph3", {
-        duration: .1,
+        duration: .01,
         alpha: 0
     });
     tl.to("#leaf-morph3", {
-        duration: 1,
+        duration: .5,
         morphSVG: "#leaf3"
     });
     tl.from("#main-line3", {
-        duration: 1,
+        duration: .5,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#outward-lines3", {
-        duration: 2,
+        duration: .5,
         stagger: 0.1,
         drawSVG: 0,
         ease: "back"
@@ -188,26 +193,26 @@ function plant3growing() {
 function plant4growing() {
     const tl = gsap.timeline();
     tl.from("#stem4", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#leaf-morph4", {
-        duration: .1,
+        duration: .01,
         alpha: 0
     });
     tl.to("#leaf-morph4", {
-        duration: 1,
+        duration: .5,
         morphSVG: "#leaf4"
     });
     tl.from("#main-line4", {
-        duration: 1,
+        duration: .5,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#outward-lines4", {
         duration: 2,
-        stagger: 0.1,
+        stagger: 0.5,
         drawSVG: 0,
         ease: "back"
     });
@@ -280,98 +285,97 @@ function fullGrownPumpkinDropping(){
 function PumpkinCarving(){
     const tl = gsap.timeline();
     tl.from("#right-eye-stroke", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         drawSVG: 0
     });
     tl.from("#right-eye-fill", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
     }, "-=.5");
     tl.from("#right-eye2", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=1.5");
+    }, "-=.5");
     tl.to("#right-eye2", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0,
         y:"+=70"
-    }, "-=1");
+    }, "-=.5");
 
 
 
     tl.from("#left-eye-stroke", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         drawSVG: 0
-    }, "-=3");
+    }, "-=2");
     tl.from("#left-eye-fill", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=1.5");
+    }, "-=.5");
     tl.from("#left-eye2", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=1.5");
+    }, "-=.5");
     tl.to("#left-eye2", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0,
         y:"+=70"
-    }, "-=1");
+    }, "-=.5");
 
 
 
     tl.from("#nose-stroke", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         drawSVG: 0
     }, "-=3");
     tl.from("#nose-fill", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
     }, "-=1.5");
     tl.from("#nose3", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
     }, "-=1.5");
     tl.to("#nose3", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0,
         y:"+=70"
-    }, "-=1");
+    }, "-=1.5");
 
 
 
     tl.from("#mouth-stroke", {
-        duration: 2,
+        duration: 1.5,
         stagger: 0.1,
         drawSVG: 0
-    }, "-=3");
+    }, "-=2.5");
     tl.from("#mouth-fill", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=1.5");
+    }, "-=2");
     tl.from("#mouth3", {
-        duration: 2,
+        duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=1.5");
+    }, "-=2");
     tl.to("#mouth3", {
-        duration: 2,
-        stagger: 0.1,
+        duration: 1,
         alpha: 0,
         y:"+=70"
-    }, "-=1");
+    }, "-=.5");
 
     
     return tl;
@@ -411,11 +415,12 @@ function leavesSwipe(){
 
 mainTL
     .add(dirtAppearing())
-    .add(babyPlantGrowing())
+    .add(babyPlantGrowing(), "<")
+    .add(babyLeafGrowing())
     .add(plant1growing(), "-=1")
-    .add(plant2growing(), "-=4")
-    .add(plant4growing(), "-=4")
-    .add(plant3growing(), "-=4")
+    .add(plant2growing(), "-=2")
+    .add(plant4growing(), "-=2")
+    .add(plant3growing(), "-=3.5")
     .add(babyPumpkinGrowing(), "-=4")
     .add(fullGrownPumpkinDropping())
     .add(PumpkinCarving())
