@@ -7,7 +7,9 @@ import { GSDevTools } from "gsap/GSDevTools";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { Flip } from "gsap/Flip";
-gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, Flip);
+import { MotionPathHelper } from "gsap/MotionPathHelper";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, Flip, MotionPathHelper, MotionPathPlugin);
 
 // // const 
 // // var
@@ -273,29 +275,139 @@ function fullGrownPumpkinDropping(){
 
 }
 
-// function fullGrownPupmkinZoomIn(){
 
 
-// }
+function PumpkinCarving(){
+    const tl = gsap.timeline();
+    tl.from("#right-eye-stroke", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    });
+    tl.from("#right-eye-fill", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=.5");
+    tl.from("#right-eye2", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=1.5");
+    tl.to("#right-eye2", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0,
+        y:"+=70"
+    }, "-=1");
 
 
-// function PumpkinCarving(){
+
+    tl.from("#left-eye-stroke", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    }, "-=3");
+    tl.from("#left-eye-fill", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=1.5");
+    tl.from("#left-eye2", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=1.5");
+    tl.to("#left-eye2", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0,
+        y:"+=70"
+    }, "-=1");
 
 
-// }
 
-// function PumpkinLightingUp(){
-//     const tl =gsap.timeline();
-//     tl.to("#light",{duration:1, scale:2, y:"-=600"});
-//     return tl;
+    tl.from("#nose-stroke", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    }, "-=3");
+    tl.from("#nose-fill", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=1.5");
+    tl.from("#nose3", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=1.5");
+    tl.to("#nose3", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0,
+        y:"+=70"
+    }, "-=1");
 
-// }
 
-// function LEAVES(){
-//     const tl =gsap.timeline();
-//     tl.to("#leaves",{duration:1, scale:2, y:"-=600"});
-//     return tl;
-// }
+
+    tl.from("#mouth-stroke", {
+        duration: 2,
+        stagger: 0.1,
+        drawSVG: 0
+    }, "-=3");
+    tl.from("#mouth-fill", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=1.5");
+    tl.from("#mouth3", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0
+    }, "-=1.5");
+    tl.to("#mouth3", {
+        duration: 2,
+        stagger: 0.1,
+        alpha: 0,
+        y:"+=70"
+    }, "-=1");
+
+    
+    return tl;
+
+}
+
+function PumpkinLightingUp(){
+    const tl =gsap.timeline();
+    tl.from("#dimmer-light",{duration:1, alpha:0, ease:"bounce"});
+    tl.from("#brightest-light",{duration:1, alpha:0, ease:"bounce"}, "-=1");
+    return tl;
+
+}
+
+function leavesSwipe(){
+    const tl =gsap.timeline();
+    // tl.from("#leaves",{duration:1, alpha:0, ease:"bounce"}, "-=1");
+    tl.from(".leaves-down",{duration:1, alpha:0, stagger: 0.2});
+    tl.to(".leaves-down", {
+        duration: 5, 
+        ease: "power1.inOut",
+        stagger: 0.2,
+        immediateRender: true,
+        scale: 2,
+        motionPath: {
+          path: "#leaves-motion-path",
+          align: "#leaves-motion-path",
+          alignOrigin: [0.5, 0.5]
+       
+        }
+    }, "<");
+    tl.to("#full-pumpkin",{duration:1, alpha:0}, "-=3.5");
+    tl.to(".leaves-down",{duration:1, alpha:0, stagger: 0.2}, "-=4");
+    return tl;
+
+}
 
 mainTL
     .add(dirtAppearing())
@@ -306,6 +418,10 @@ mainTL
     .add(plant3growing(), 14)
     .add(babyPumpkinGrowing(), 16)
     .add(fullGrownPumpkinDropping())
+    .add(PumpkinCarving())
+    .add(PumpkinLightingUp())
+    .add(leavesSwipe())
+
 
 
 
@@ -314,7 +430,8 @@ GSDevTools.create();
 MorphSVGPlugin.create();
 DrawSVGPlugin.create();
 Flip.create();
-
+MotionPathHelper.create();
+MotionPathPlugin.create();
 
 
 
