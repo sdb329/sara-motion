@@ -380,8 +380,8 @@ function PumpkinCarving(){
 
 function PumpkinLightingUp(){
     const tl =gsap.timeline();
-    tl.from("#dimmer-light",{duration:1, alpha:0, ease:"bounce"});
-    tl.from("#brightest-light",{duration:1, alpha:0, ease:"bounce"}, "-=1");
+    tl.from("#dimmer-light",{duration:1, alpha:0, repeat:3, ease:"bounce"});
+    tl.from("#brightest-light",{duration:1, alpha:0, repeat:3, ease:"bounce"}, "<");
     return tl;
 
 }
@@ -412,15 +412,15 @@ function leavesSwipe(){
 mainTL
     .add(dirtAppearing())
     .add(babyPlantGrowing())
-    .add(plant1growing())
-    .add(plant2growing(), 10)
-    .add(plant4growing(), 12)
-    .add(plant3growing(), 14)
-    .add(babyPumpkinGrowing(), 16)
+    .add(plant1growing(), "-=1")
+    .add(plant2growing(), "-=4")
+    .add(plant4growing(), "-=4")
+    .add(plant3growing(), "-=4")
+    .add(babyPumpkinGrowing(), "-=4")
     .add(fullGrownPumpkinDropping())
     .add(PumpkinCarving())
     .add(PumpkinLightingUp())
-    .add(leavesSwipe())
+    .add(leavesSwipe(), "-=4")
 
 
 
