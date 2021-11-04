@@ -224,26 +224,34 @@ function plant4growing() {
 
 function babyPumpkinGrowing(){
     const tl = gsap.timeline();
-    tl.from("#baby-pumpkin", {
-        duration: 3,
-        y:"-=13",
-        scale:0
-    });
-    tl.to("#baby-pumpkin", {
-        duration: 3,
-        scale:4,
-        rotate: -20
-    });
-    tl.to("#baby-pumpkin", {
+
+
+    tl.set("#grown-up-pumpkin", {
         duration: 1,
         alpha: 0,
         
-        x:"-=20"
-    }, "-=1");
-    tl.from("#grown-up-pumpkin", {
-        duration: 1,
-        alpha: 0
-    }, "-=1");
+        y:"-=300"
+    });
+    // tl.from("#baby-pumpkin", {
+    //     duration: 3,
+    //     y:"-=13",
+    //     scale:0
+    // });
+    // tl.to("#baby-pumpkin", {
+    //     duration: 3,
+    //     scale:4,
+    //     rotate: -20
+    // });
+    // tl.to("#baby-pumpkin", {
+    //     duration: 1,
+    //     alpha: 0,
+        
+    //     x:"-=20"
+    // }, "-=1");
+    // tl.from("#grown-up-pumpkin", {
+    //     duration: 1,
+    //     alpha: 0
+    // }, "-=1");
 
 
     return tl;
@@ -260,20 +268,23 @@ function fullGrownPumpkinDropping(){
         y:"-=300"
     });
 
-    tl.to("#grown-up-pumpkin", {
-        duration: 1,
-        alpha: 0,
-        rotation: 30,
-        scale: 2,
-        x:"-=70",
-        y:"-=70"
-    }, "-=1");
+    // tl.to("#grown-up-pumpkin", {
+    //     duration: 1,
+    //     alpha: 0,
+    //     rotation: 30,
+    //     scale: 2,
+    //     x:"-=70",
+    //     y:"-=70"
+    // }, "-=1");
 
     tl.from("#pumpkin", {
         duration: 1,
         alpha: 0,
-        x:"+=70",
-        y:"-=70"
+    }, "-=1");
+
+    tl.to("#pumpkin", {
+        color: "#45825B",
+        duration: 1
     }, "-=1");
 
     return tl;
