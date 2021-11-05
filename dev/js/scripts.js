@@ -108,7 +108,7 @@ function babyLeafGrowing() {
 
     tl.to("#right-bplant", {
         duration: 1,
-        rotation: 50,
+        rotation: 40,
         transformOrigin: "bottom -1%"
     }, "split");
     return tl;
@@ -281,7 +281,7 @@ function plant4growing() {
 function fullGrownPumpkinDropping() {
     const tl = gsap.timeline();
     tl.to("#grown-up-pumpkin", {
-        duration: 3.5,
+        duration: 2.5,
         alpha: 1,
         scale: 10,
         rotate: 40,
@@ -399,7 +399,7 @@ function PumpkinCarving() {
         duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=2");
+    }, "-=1.2");
     tl.from("#mouth3", {
         duration: 1,
         stagger: 0.1,
@@ -498,22 +498,22 @@ function PumpkinLightingUp() {
         ease: "bounce"
     }, "<");
 
-    tl.to("#dimmer-light", {
-        duration: 1,
-        alpha: 0.7,
-        ease: "bounce",
-        repeat: 3,
-        yoyo: true
-    }, "flicker1");
+    // tl.to("#dimmer-light", {
+    //     duration: 1,
+    //     alpha: 0.7,
+    //     ease: "bounce",
+    //     repeat: 3,
+    //     yoyo: true
+    // }, "flicker1");
 
 
-    tl.to("#brightest-light", {
-        duration: 1,
-        alpha: 0.7,
-        ease: "bounce",
-        repeat: 3,
-        yoyo: true
-    }, "flicker1");
+    // tl.to("#brightest-light", {
+    //     duration: 1,
+    //     alpha: 0.7,
+    //     ease: "bounce",
+    //     repeat: 3,
+    //     yoyo: true
+    // }, "flicker1");
     return tl;
 
 }
@@ -545,7 +545,8 @@ function leavesSwipe() {
             alignOrigin: [0.5, 0.5]
 
         }
-    });
+    }, "leafSameTime");
+  
 
 
     // tl.from(".leaves-down2",{duration:1, alpha:0, stagger: 0.1}, "leafswipe1");
@@ -561,7 +562,8 @@ function leavesSwipe() {
             alignOrigin: [0.5, 0.5]
 
         }
-    }, "-=3");
+    }, "leafSameTime");
+  
 
     tl.to(".leaves-down3", {
         duration: 2,
@@ -575,33 +577,48 @@ function leavesSwipe() {
             alignOrigin: [0.5, 0.5]
 
         }
-    }, "-=3");
+    }, "leafSameTime");
+
+    tl.to(".disappear", {
+        duration: .1,
+        alpha: 0,
+        stagger: 0.1
+    }, "-=1");
+
 
 
     tl.to("#full-pumpkin", {
-        duration: 1,
+        duration: .2,
         alpha: 0
-    }, "-=2");
+    }, "-=1.5");
 
 
-    tl.to(".leaves-down", {
-        duration: .1,
-        alpha: 0,
-        stagger: 0.1
-    }, "-=3");
-    tl.to(".leaves-down2", {
-        duration: .1,
-        alpha: 0,
-        stagger: 0.1
-    }, "-=3");
-    tl.to(".leaves-down3", {
-        duration: .1,
-        alpha: 0,
-        stagger: 0.1
-    }, "-=3");
+  
     return tl;
 
 }
+
+// function leavesDisappearing() {
+//     const tl = gsap.timeline();
+//     tl.to(".leaves-down", {
+//         duration: .1,
+//         alpha: 0,
+//         stagger: 0.1
+//     }, "leafSameTime");
+//     tl.to(".leaves-down2", {
+//         duration: .1,
+//         alpha: 0,
+//         stagger: 0.1
+//     }, "leafSameTime");
+//     tl.to(".leaves-down3", {
+//         duration: .1,
+//         alpha: 0,
+//         stagger: 0.1
+//     }, "leafSameTime");
+
+//     return tl;
+
+// }
 
 mainTL
     .add(dirtAppearing())
@@ -615,7 +632,8 @@ mainTL
     .add(fullGrownPumpkinDropping(), "-=3.5")
     .add(PumpkinCarving())
     .add(PumpkinLightingUp(), "-=1")
-    .add(leavesSwipe(), "-=4")
+    .add(leavesSwipe(), "-=1")
+    // .add(leavesDisappearing(), "-=1")
 
 ;
 
