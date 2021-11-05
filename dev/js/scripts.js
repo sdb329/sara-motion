@@ -22,8 +22,28 @@ const mainTL = gsap.timeline();
 
 function dirtAppearing() {
     const tl = gsap.timeline();
+
+    tl.set(".leaves-down", {
+        alpha: 0
+    })
+
+
+    tl.set(".leaves-down2", {
+        alpha: 0
+    })
+
+    tl.set(".leaves-down3", {
+        alpha: 0
+    })
+
+    tl.set("#grown-up-pumpkin", {
+        y: "=30",
+        alpha: 0
+    })
+
+
     tl.from("#dirt", {
-        duration: .2,
+        duration: .1,
         alpha: 0,
         ease: "none"
     });
@@ -59,40 +79,40 @@ function babyPlantGrowing() {
 
 }
 
-    function babyLeafGrowing() {
-        const tl = gsap.timeline();
-        tl.from("#morph-right-leaf1", {
-            duration: .01,
-            alpha: 0
-        }, "appearLeafSameTime");
-        tl.from("#morph-left-leaf1", {
-            duration: .01,
-            alpha: 0
-        }, "appearLeafSameTime");
-    
-    
-        tl.to("#morph-right-leaf1", {
-            duration: 1,
-            morphSVG: "#big-leaf-right1"
-        }, "leafSameTime");
-        tl.to("#morph-left-leaf1", {
-            duration: 1,
-            morphSVG: "#small-leaf-left1"
-        }, "leafSameTime");
-    
-        tl.to("#left-bplant", {
-            duration: 1,
-            rotation: -70,
-            transformOrigin: "bottom"
-        }, "split");
-    
-        tl.to("#right-bplant", {
-            duration: 1,
-            rotation: 50,
-            transformOrigin: "bottom -1%"
-        }, "split");
-        return tl;
-    }
+function babyLeafGrowing() {
+    const tl = gsap.timeline();
+    tl.from("#morph-right-leaf1", {
+        duration: .01,
+        alpha: 0
+    }, "appearLeafSameTime");
+    tl.from("#morph-left-leaf1", {
+        duration: .01,
+        alpha: 0
+    }, "appearLeafSameTime");
+
+
+    tl.to("#morph-right-leaf1", {
+        duration: 1,
+        morphSVG: "#big-leaf-right1"
+    }, "leafSameTime");
+    tl.to("#morph-left-leaf1", {
+        duration: 1,
+        morphSVG: "#small-leaf-left1"
+    }, "leafSameTime");
+
+    tl.to("#left-bplant", {
+        duration: 1,
+        rotation: -70,
+        transformOrigin: "bottom"
+    }, "split");
+
+    tl.to("#right-bplant", {
+        duration: 1,
+        rotation: 50,
+        transformOrigin: "bottom -1%"
+    }, "split");
+    return tl;
+}
 
 
 function plant1growing() {
@@ -222,51 +242,68 @@ function plant4growing() {
 
 }
 
-function babyPumpkinGrowing(){
+// function babyPumpkinGrowing(){
+//     const tl = gsap.timeline();
+
+
+//     tl.set("#grown-up-pumpkin", {
+//         duration: 1,
+//         alpha: 0,
+
+//         y:"-=300"
+//     });
+//     // tl.from("#baby-pumpkin", {
+//     //     duration: 3,
+//     //     y:"-=13",
+//     //     scale:0
+//     // });
+//     // tl.to("#baby-pumpkin", {
+//     //     duration: 3,
+//     //     scale:4,
+//     //     rotate: -20
+//     // });
+//     // tl.to("#baby-pumpkin", {
+//     //     duration: 1,
+//     //     alpha: 0,
+
+//     //     x:"-=20"
+//     // }, "-=1");
+//     // tl.from("#grown-up-pumpkin", {
+//     //     duration: 1,
+//     //     alpha: 0
+//     // }, "-=1");
+
+
+//     return tl;
+
+// }
+
+function fullGrownPumpkinDropping() {
     const tl = gsap.timeline();
+    tl.to("#grown-up-pumpkin", {
+        duration: 3.5,
+        alpha: 1,
+        scale: 10,
+        rotate: 40,
+        y: "-=10"
 
+    }, "-=1");
 
-    tl.set("#grown-up-pumpkin", {
-        duration: 1,
-        alpha: 0,
-        
-        y:"-=300"
-    });
-    // tl.from("#baby-pumpkin", {
-    //     duration: 3,
-    //     y:"-=13",
-    //     scale:0
-    // });
-    // tl.to("#baby-pumpkin", {
-    //     duration: 3,
-    //     scale:4,
-    //     rotate: -20
-    // });
-    // tl.to("#baby-pumpkin", {
-    //     duration: 1,
-    //     alpha: 0,
-        
-    //     x:"-=20"
-    // }, "-=1");
-    // tl.from("#grown-up-pumpkin", {
-    //     duration: 1,
-    //     alpha: 0
-    // }, "-=1");
-
-
-    return tl;
-
-}
-
-function fullGrownPumpkinDropping(){
-    const tl = gsap.timeline();
 
     tl.to(".fade-up", {
         duration: 1,
         alpha: 0,
-        
-        y:"-=300"
-    });
+
+        y: "-=300"
+    }, "pumpkinDropping");
+
+    tl.to("#grown-up-pumpkin", {
+        duration: 1,
+        scale: 25,
+        y: "-=35",
+        x: "-=198",
+        rotate: 28
+    }, "pumpkinDropping");
 
     // tl.to("#grown-up-pumpkin", {
     //     duration: 1,
@@ -277,15 +314,6 @@ function fullGrownPumpkinDropping(){
     //     y:"-=70"
     // }, "-=1");
 
-    tl.from("#pumpkin", {
-        duration: 1,
-        alpha: 0,
-    }, "-=1");
-
-    tl.to("#pumpkin", {
-        color: "#45825B",
-        duration: 1
-    }, "-=1");
 
     return tl;
 
@@ -293,7 +321,7 @@ function fullGrownPumpkinDropping(){
 
 
 
-function PumpkinCarving(){
+function PumpkinCarving() {
     const tl = gsap.timeline();
     tl.from("#right-eye-stroke", {
         duration: 1,
@@ -314,10 +342,8 @@ function PumpkinCarving(){
         duration: 1,
         stagger: 0.1,
         alpha: 0,
-        y:"+=70"
+        y: "+=70"
     }, "-=.5");
-
-
 
     tl.from("#left-eye-stroke", {
         duration: 1,
@@ -328,7 +354,7 @@ function PumpkinCarving(){
         duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=.5");
+    }, "-=1.5");
     tl.from("#left-eye2", {
         duration: 1,
         stagger: 0.1,
@@ -338,37 +364,34 @@ function PumpkinCarving(){
         duration: 1,
         stagger: 0.1,
         alpha: 0,
-        y:"+=70"
+        y: "+=70"
     }, "-=.5");
-
-
 
     tl.from("#nose-stroke", {
         duration: 1,
         stagger: 0.1,
         drawSVG: 0
-    }, "-=3");
+    }, "-=2.5");
     tl.from("#nose-fill", {
         duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=1.5");
+    }, "-=2");
     tl.from("#nose3", {
         duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=1.5");
+    }, "-=1");
     tl.to("#nose3", {
         duration: 1,
         stagger: 0.1,
         alpha: 0,
-        y:"+=70"
-    }, "-=1.5");
-
+        y: "+=70"
+    }, "-=.5");
 
 
     tl.from("#mouth-stroke", {
-        duration: 1.5,
+        duration: 2,
         stagger: 0.1,
         drawSVG: 0
     }, "-=2.5");
@@ -381,45 +404,201 @@ function PumpkinCarving(){
         duration: 1,
         stagger: 0.1,
         alpha: 0
-    }, "-=2");
+    }, "-=1");
     tl.to("#mouth3", {
         duration: 1,
+        stagger: 0.1,
         alpha: 0,
-        y:"+=70"
+        y: "+=70"
     }, "-=.5");
 
-    
+
+    // tl.from("#left-eye-stroke", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     drawSVG: 0
+    // }, "-=2");
+    // tl.from("#left-eye-fill", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     alpha: 0
+    // }, "-=1.5");
+    // tl.from("#left-eye2", {
+    //     duration: 1,
+    //     alpha: 0
+    // }, "-=1");
+    // tl.to("#left-eye2", {
+    //     duration: 1,
+    //     alpha: 0,
+    //     y:"+=70"
+    // }, "-=1");
+
+
+
+    // tl.from("#nose-stroke", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     drawSVG: 0
+    // }, "-=3");
+    // tl.from("#nose-fill", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     alpha: 0
+    // }, "-=1.5");
+    // tl.from("#nose3", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     alpha: 0
+    // }, "-=1.5");
+    // tl.to("#nose3", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     alpha: 0,
+    //     y:"+=70"
+    // }, "-=1.5");
+
+
+
+    // tl.from("#mouth-stroke", {
+    //     duration: 1.5,
+    //     stagger: 0.1,
+    //     drawSVG: 0
+    // }, "-=2.5");
+    // tl.from("#mouth-fill", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     alpha: 0
+    // }, "-=2");
+    // tl.from("#mouth3", {
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     alpha: 0
+    // }, "-=2");
+    // tl.to("#mouth3", {
+    //     duration: 1,
+    //     alpha: 0,
+    //     y:"+=70"
+    // }, "-=.5");
+
+
     return tl;
 
 }
 
-function PumpkinLightingUp(){
-    const tl =gsap.timeline();
-    tl.from("#dimmer-light",{duration:1, alpha:0, repeat:3, ease:"bounce"});
-    tl.from("#brightest-light",{duration:1, alpha:0, repeat:3, ease:"bounce"}, "<");
+function PumpkinLightingUp() {
+    const tl = gsap.timeline();
+    tl.from("#dimmer-light", {
+        duration: 1,
+        alpha: 0,
+        ease: "bounce"
+    });
+    tl.from("#brightest-light", {
+        duration: 1,
+        alpha: 0,
+        ease: "bounce"
+    }, "<");
+
+    tl.to("#dimmer-light", {
+        duration: 1,
+        alpha: 0.7,
+        ease: "bounce",
+        repeat: 3,
+        yoyo: true
+    }, "flicker1");
+
+
+    tl.to("#brightest-light", {
+        duration: 1,
+        alpha: 0.7,
+        ease: "bounce",
+        repeat: 3,
+        yoyo: true
+    }, "flicker1");
     return tl;
 
 }
 
-function leavesSwipe(){
-    const tl =gsap.timeline();
+function leavesSwipe() {
+    const tl = gsap.timeline();
+
+    tl.set("#leaves-motion-path2", {
+        y: "-=200"
+    })
+
+    tl.set("#leaves-motion-path3", {
+        y: "-=150"
+    })
     // tl.from("#leaves",{duration:1, alpha:0, ease:"bounce"}, "-=1");
-    tl.from(".leaves-down",{duration:1, alpha:0, stagger: 0.2});
+    // tl.from(".leaves-down",{duration:1, alpha:0, stagger: 0.1}, "leafswipe1");
+
+
+
     tl.to(".leaves-down", {
-        duration: 5, 
+        duration: 2,
+        alpha: 1,
         ease: "power1.inOut",
-        stagger: 0.2,
-        immediateRender: true,
+        stagger: 0.1,
         scale: 2,
         motionPath: {
-          path: "#leaves-motion-path",
-          align: "#leaves-motion-path",
-          alignOrigin: [0.5, 0.5]
-       
+            path: "#leaves-motion-path",
+            align: "#leaves-motion-path",
+            alignOrigin: [0.5, 0.5]
+
         }
-    }, "<");
-    tl.to("#full-pumpkin",{duration:1, alpha:0}, "-=3.5");
-    tl.to(".leaves-down",{duration:1, alpha:0, stagger: 0.2}, "-=4");
+    });
+
+
+    // tl.from(".leaves-down2",{duration:1, alpha:0, stagger: 0.1}, "leafswipe1");
+    tl.to(".leaves-down2", {
+        duration: 2,
+        alpha: 1,
+        ease: "power1.inOut",
+        stagger: 0.1,
+        scale: 2,
+        motionPath: {
+            path: "#leaves-motion-path2",
+            align: "#leaves-motion-path2",
+            alignOrigin: [0.5, 0.5]
+
+        }
+    }, "-=3");
+
+    tl.to(".leaves-down3", {
+        duration: 2,
+        alpha: 1,
+        ease: "power1.inOut",
+        stagger: 0.1,
+        scale: 2,
+        motionPath: {
+            path: "#leaves-motion-path3",
+            align: "#leaves-motion-path3",
+            alignOrigin: [0.5, 0.5]
+
+        }
+    }, "-=3");
+
+
+    tl.to("#full-pumpkin", {
+        duration: 1,
+        alpha: 0
+    }, "-=2");
+
+
+    tl.to(".leaves-down", {
+        duration: .1,
+        alpha: 0,
+        stagger: 0.1
+    }, "-=3");
+    tl.to(".leaves-down2", {
+        duration: .1,
+        alpha: 0,
+        stagger: 0.1
+    }, "-=3");
+    tl.to(".leaves-down3", {
+        duration: .1,
+        alpha: 0,
+        stagger: 0.1
+    }, "-=3");
     return tl;
 
 }
@@ -432,11 +611,16 @@ mainTL
     .add(plant2growing(), "-=2")
     .add(plant4growing(), "-=2")
     .add(plant3growing(), "-=3.5")
-    .add(babyPumpkinGrowing(), "-=4")
-    .add(fullGrownPumpkinDropping())
+    // .add(babyPumpkinGrowing(), "-=4")
+    .add(fullGrownPumpkinDropping(), "-=3.5")
     .add(PumpkinCarving())
-    .add(PumpkinLightingUp())
+    .add(PumpkinLightingUp(), "-=1")
     .add(leavesSwipe(), "-=4")
+
+;
+
+
+
 
 
 
