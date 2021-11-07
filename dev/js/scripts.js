@@ -25,21 +25,21 @@ function dirtAppearing() {
 
     tl.set(".leaves-down", {
         alpha: 0
-    })
+    });
 
 
     tl.set(".leaves-down2", {
         alpha: 0
-    })
+    });
 
     tl.set(".leaves-down3", {
         alpha: 0
-    })
+    });
 
     tl.set("#grown-up-pumpkin", {
         y: "=30",
         alpha: 0
-    })
+    });
 
 
     tl.from("#dirt", {
@@ -523,11 +523,11 @@ function leavesSwipe() {
 
     tl.set("#leaves-motion-path2", {
         y: "-=200"
-    })
+    });
 
     tl.set("#leaves-motion-path3", {
         y: "-=150"
-    })
+    });
     // tl.from("#leaves",{duration:1, alpha:0, ease:"bounce"}, "-=1");
     // tl.from(".leaves-down",{duration:1, alpha:0, stagger: 0.1}, "leafswipe1");
 
@@ -592,9 +592,21 @@ function leavesSwipe() {
         alpha: 0
     }, "-=1.5");
 
+    tl.to("#preloader", {
+        alpha:0,
+        duration:0.5,
+        onComplete:PreloaderDone
 
+    }, "-=1");
   
     return tl;
+
+}
+
+function PreloaderDone() {
+
+    window.scrollTo(0,0);
+    gsap.set("#preloader",{display:"none"});
 
 }
 
@@ -620,6 +632,62 @@ function leavesSwipe() {
 
 // }
 
+function heroAnimation(){
+    const tl = gsap.timeline();
+
+
+    tl.from("header",{duration:1.5, y:"-=150"});
+tl.from("header li",{duration:.5, y:"+=150", alpha:0, stagger:0.1, ease:"back"});
+tl.from("header a",{duration:.5, y:"+=150", alpha:0, rotation:360, ease:"back"}, "<");
+
+
+
+
+
+
+tl.from("#hero",{duration:2,alpha:0, scale:2}, "-=2");
+tl.from("#hero #header1",{duration:2,y:"+=900", alpha:0, ease:"elastic"},"-=1");
+tl.from("#hero #l1",{duration:2.5,y:"+=400", alpha:0, rotation:360, ease:"back"},"-=1");
+tl.from("#hero #l2",{duration:2.5,y:"+=900", alpha:0, rotation:360, ease:"back"},"-=2.5");
+
+
+tl.from("#content h2",{duration:2.5,scale:0, alpha:0, ease:"back"}, "-=2");
+tl.from("#content #boxes-grid",{duration:4,alpha:0}, "-=4");
+tl.from("#content #imagec",{duration:4,alpha:0, x:"+=400"}, "<");
+tl.from("#content p",{duration:6, x:"+=150", alpha:0, stagger:0.4, ease:"back"}, "-=3");
+
+
+
+return tl;
+}
+
+
+// mainTL
+
+// .from("header",{duration:1.5, y:"-=150"})
+// .from("header li",{duration:.5, y:"+=150", alpha:0, stagger:0.1, ease:"back"})
+// .from("header a",{duration:.5, y:"+=150", alpha:0, rotation:360, ease:"back"}, "<")
+
+
+
+
+
+
+// .from("#hero",{duration:2,alpha:0, scale:2}, "-=2")
+// .from("#hero #header1",{duration:2,y:"+=900", alpha:0, ease:"elastic"},"-=1")
+// .from("#hero #l1",{duration:2.5,y:"+=400", alpha:0, rotation:360, ease:"back"},"-=1")
+// .from("#hero #l2",{duration:2.5,y:"+=900", alpha:0, rotation:360, ease:"back"},"-=2.5")
+
+
+// .from("#content h2",{duration:2.5,scale:0, alpha:0, ease:"back"}, "-=2")
+// .from("#content #boxes-grid",{duration:4,alpha:0}, "-=4")
+// .from("#content #imagec",{duration:4,alpha:0, x:"+=400"}, "<")
+// .from("#content p",{duration:6, x:"+=150", alpha:0, stagger:0.4, ease:"back"}, "-=3")
+
+
+
+// ;
+
 mainTL
     .add(dirtAppearing())
     .add(babyPlantGrowing(), "<")
@@ -633,9 +701,13 @@ mainTL
     .add(PumpkinCarving())
     .add(PumpkinLightingUp(), "-=1")
     .add(leavesSwipe(), "-=1")
+    .add(heroAnimation())
+    // .add(PreloaderDone())
     // .add(leavesDisappearing(), "-=1")
 
 ;
+
+
 
 
 

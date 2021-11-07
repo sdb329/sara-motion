@@ -454,9 +454,9 @@ header div aside a {
     Footer
 ============= */
 #preloader {
-  position: absolute;
+  position: fixed;
   height: 100vh;
-  width: 100%;
+  width: 102%;
   z-index: 1000;
 }
 #preloader > svg .hidden {
