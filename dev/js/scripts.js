@@ -242,41 +242,6 @@ function plant4growing() {
 
 }
 
-// function babyPumpkinGrowing(){
-//     const tl = gsap.timeline();
-
-
-//     tl.set("#grown-up-pumpkin", {
-//         duration: 1,
-//         alpha: 0,
-
-//         y:"-=300"
-//     });
-//     // tl.from("#baby-pumpkin", {
-//     //     duration: 3,
-//     //     y:"-=13",
-//     //     scale:0
-//     // });
-//     // tl.to("#baby-pumpkin", {
-//     //     duration: 3,
-//     //     scale:4,
-//     //     rotate: -20
-//     // });
-//     // tl.to("#baby-pumpkin", {
-//     //     duration: 1,
-//     //     alpha: 0,
-
-//     //     x:"-=20"
-//     // }, "-=1");
-//     // tl.from("#grown-up-pumpkin", {
-//     //     duration: 1,
-//     //     alpha: 0
-//     // }, "-=1");
-
-
-//     return tl;
-
-// }
 
 function fullGrownPumpkinDropping() {
     const tl = gsap.timeline();
@@ -304,15 +269,6 @@ function fullGrownPumpkinDropping() {
         x: "-=198",
         rotate: 28
     }, "pumpkinDropping");
-
-    // tl.to("#grown-up-pumpkin", {
-    //     duration: 1,
-    //     alpha: 0,
-    //     rotation: 30,
-    //     scale: 2,
-    //     x:"-=70",
-    //     y:"-=70"
-    // }, "-=1");
 
 
     return tl;
@@ -413,74 +369,6 @@ function PumpkinCarving() {
     }, "-=.5");
 
 
-    // tl.from("#left-eye-stroke", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     drawSVG: 0
-    // }, "-=2");
-    // tl.from("#left-eye-fill", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     alpha: 0
-    // }, "-=1.5");
-    // tl.from("#left-eye2", {
-    //     duration: 1,
-    //     alpha: 0
-    // }, "-=1");
-    // tl.to("#left-eye2", {
-    //     duration: 1,
-    //     alpha: 0,
-    //     y:"+=70"
-    // }, "-=1");
-
-
-
-    // tl.from("#nose-stroke", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     drawSVG: 0
-    // }, "-=3");
-    // tl.from("#nose-fill", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     alpha: 0
-    // }, "-=1.5");
-    // tl.from("#nose3", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     alpha: 0
-    // }, "-=1.5");
-    // tl.to("#nose3", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     alpha: 0,
-    //     y:"+=70"
-    // }, "-=1.5");
-
-
-
-    // tl.from("#mouth-stroke", {
-    //     duration: 1.5,
-    //     stagger: 0.1,
-    //     drawSVG: 0
-    // }, "-=2.5");
-    // tl.from("#mouth-fill", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     alpha: 0
-    // }, "-=2");
-    // tl.from("#mouth3", {
-    //     duration: 1,
-    //     stagger: 0.1,
-    //     alpha: 0
-    // }, "-=2");
-    // tl.to("#mouth3", {
-    //     duration: 1,
-    //     alpha: 0,
-    //     y:"+=70"
-    // }, "-=.5");
-
-
     return tl;
 
 }
@@ -498,22 +386,7 @@ function PumpkinLightingUp() {
         ease: "bounce"
     }, "<");
 
-    // tl.to("#dimmer-light", {
-    //     duration: 1,
-    //     alpha: 0.7,
-    //     ease: "bounce",
-    //     repeat: 3,
-    //     yoyo: true
-    // }, "flicker1");
 
-
-    // tl.to("#brightest-light", {
-    //     duration: 1,
-    //     alpha: 0.7,
-    //     ease: "bounce",
-    //     repeat: 3,
-    //     yoyo: true
-    // }, "flicker1");
     return tl;
 
 }
@@ -528,8 +401,7 @@ function leavesSwipe() {
     tl.set("#leaves-motion-path3", {
         y: "-=150"
     });
-    // tl.from("#leaves",{duration:1, alpha:0, ease:"bounce"}, "-=1");
-    // tl.from(".leaves-down",{duration:1, alpha:0, stagger: 0.1}, "leafswipe1");
+
 
 
 
@@ -546,10 +418,9 @@ function leavesSwipe() {
 
         }
     }, "leafSameTime");
-  
 
 
-    // tl.from(".leaves-down2",{duration:1, alpha:0, stagger: 0.1}, "leafswipe1");
+
     tl.to(".leaves-down2", {
         duration: 2,
         alpha: 1,
@@ -563,7 +434,7 @@ function leavesSwipe() {
 
         }
     }, "leafSameTime");
-  
+
 
     tl.to(".leaves-down3", {
         duration: 2,
@@ -593,100 +464,111 @@ function leavesSwipe() {
     }, "-=1.5");
 
     tl.to("#preloader", {
-        alpha:0,
-        duration:0.5,
-        onComplete:PreloaderDone
+        alpha: 0,
+        duration: 0.5,
+        onComplete: PreloaderDone
 
     }, "-=1");
-  
+
     return tl;
 
 }
 
 function PreloaderDone() {
 
-    window.scrollTo(0,0);
-    gsap.set("#preloader",{display:"none"});
+    window.scrollTo(0, 0);
+    gsap.set("#preloader", {
+        display: "none"
+    });
 
 }
 
-// function leavesDisappearing() {
-//     const tl = gsap.timeline();
-//     tl.to(".leaves-down", {
-//         duration: .1,
-//         alpha: 0,
-//         stagger: 0.1
-//     }, "leafSameTime");
-//     tl.to(".leaves-down2", {
-//         duration: .1,
-//         alpha: 0,
-//         stagger: 0.1
-//     }, "leafSameTime");
-//     tl.to(".leaves-down3", {
-//         duration: .1,
-//         alpha: 0,
-//         stagger: 0.1
-//     }, "leafSameTime");
 
-//     return tl;
-
-// }
-
-function heroAnimation(){
+function heroAnimation() {
     const tl = gsap.timeline();
 
 
-    tl.from("header",{duration:1.5, y:"-=150"});
-tl.from("header li",{duration:.5, y:"+=150", alpha:0, stagger:0.1, ease:"back"});
-tl.from("header a",{duration:.5, y:"+=150", alpha:0, rotation:360, ease:"back"}, "<");
+    tl.from("header", {
+        duration: 1.5,
+        y: "-=150"
+    });
+    tl.from("header li", {
+        duration: .5,
+        y: "+=150",
+        alpha: 0,
+        stagger: 0.1,
+        ease: "back"
+    });
+    tl.from("header a", {
+        duration: .5,
+        y: "+=150",
+        alpha: 0,
+        rotation: 360,
+        ease: "back"
+    }, "<");
 
 
 
 
 
 
-tl.from("#hero",{duration:2,alpha:0, scale:2}, "-=2");
-tl.from("#hero #header1",{duration:2,y:"+=900", alpha:0, ease:"elastic"},"-=1");
-tl.from("#hero #l1",{duration:2.5,y:"+=400", alpha:0, rotation:360, ease:"back"},"-=1");
-tl.from("#hero #l2",{duration:2.5,y:"+=900", alpha:0, rotation:360, ease:"back"},"-=2.5");
+    tl.from("#hero", {
+        duration: 2,
+        alpha: 0,
+        scale: 2
+    }, "-=2");
+    tl.from("#hero #header1", {
+        duration: 2,
+        y: "+=900",
+        alpha: 0,
+        ease: "elastic"
+    }, "-=1");
+    tl.from("#hero #l1", {
+        duration: 2.5,
+        y: "+=400",
+        alpha: 0,
+        rotation: 360,
+        ease: "back"
+    }, "-=1");
+    tl.from("#hero #l2", {
+        duration: 2.5,
+        y: "+=900",
+        alpha: 0,
+        rotation: 360,
+        ease: "back"
+    }, "-=2.5");
 
 
-tl.from("#content h2",{duration:2.5,scale:0, alpha:0, ease:"back"}, "-=2");
-tl.from("#content #boxes-grid",{duration:4,alpha:0}, "-=4");
-tl.from("#content #imagec",{duration:4,alpha:0, x:"+=400"}, "<");
-tl.from("#content p",{duration:6, x:"+=150", alpha:0, stagger:0.4, ease:"back"}, "-=3");
+    tl.from("#content h2", {
+        duration: 2.5,
+        scale: 0,
+        alpha: 0,
+        ease: "back"
+    }, "-=2");
+    tl.from("#content #boxes-grid", {
+        duration: 4,
+        alpha: 0
+    }, "-=4");
+    tl.from("#content #imagec", {
+        duration: 4,
+        alpha: 0,
+        x: "+=400"
+    }, "<");
+    tl.from("#content p", {
+        duration: 6,
+        x: "+=150",
+        alpha: 0,
+        stagger: 0.4,
+        ease: "back"
+    }, "-=3");
 
 
 
-return tl;
+    return tl;
 }
 
 
-// mainTL
 
-// .from("header",{duration:1.5, y:"-=150"})
-// .from("header li",{duration:.5, y:"+=150", alpha:0, stagger:0.1, ease:"back"})
-// .from("header a",{duration:.5, y:"+=150", alpha:0, rotation:360, ease:"back"}, "<")
-
-
-
-
-
-
-// .from("#hero",{duration:2,alpha:0, scale:2}, "-=2")
-// .from("#hero #header1",{duration:2,y:"+=900", alpha:0, ease:"elastic"},"-=1")
-// .from("#hero #l1",{duration:2.5,y:"+=400", alpha:0, rotation:360, ease:"back"},"-=1")
-// .from("#hero #l2",{duration:2.5,y:"+=900", alpha:0, rotation:360, ease:"back"},"-=2.5")
-
-
-// .from("#content h2",{duration:2.5,scale:0, alpha:0, ease:"back"}, "-=2")
-// .from("#content #boxes-grid",{duration:4,alpha:0}, "-=4")
-// .from("#content #imagec",{duration:4,alpha:0, x:"+=400"}, "<")
-// .from("#content p",{duration:6, x:"+=150", alpha:0, stagger:0.4, ease:"back"}, "-=3")
-
-
-
-// ;
 
 mainTL
     .add(dirtAppearing())
@@ -696,14 +578,11 @@ mainTL
     .add(plant2growing(), "-=2")
     .add(plant4growing(), "-=2")
     .add(plant3growing(), "-=3.5")
-    // .add(babyPumpkinGrowing(), "-=4")
     .add(fullGrownPumpkinDropping(), "-=3.5")
     .add(PumpkinCarving())
     .add(PumpkinLightingUp(), "-=1")
     .add(leavesSwipe(), "-=1")
     .add(heroAnimation())
-    // .add(PreloaderDone())
-    // .add(leavesDisappearing(), "-=1")
 
 ;
 
@@ -722,32 +601,3 @@ DrawSVGPlugin.create();
 Flip.create();
 MotionPathHelper.create();
 MotionPathPlugin.create();
-
-
-
-
-// mainTL
-
-// .from("header",{duration:1.5, y:"-=150"})
-// .from("header li",{duration:.5, y:"+=150", alpha:0, stagger:0.1, ease:"back"})
-// .from("header a",{duration:.5, y:"+=150", alpha:0, rotation:360, ease:"back"}, "<")
-
-
-
-
-
-
-// .from("#hero",{duration:2,alpha:0, scale:2}, "-=2")
-// .from("#hero #header1",{duration:2,y:"+=900", alpha:0, ease:"elastic"},"-=1")
-// .from("#hero #l1",{duration:2.5,y:"+=400", alpha:0, rotation:360, ease:"back"},"-=1")
-// .from("#hero #l2",{duration:2.5,y:"+=900", alpha:0, rotation:360, ease:"back"},"-=2.5")
-
-
-// .from("#content h2",{duration:2.5,scale:0, alpha:0, ease:"back"}, "-=2")
-// .from("#content #boxes-grid",{duration:4,alpha:0}, "-=4")
-// .from("#content #imagec",{duration:4,alpha:0, x:"+=400"}, "<")
-// .from("#content p",{duration:6, x:"+=150", alpha:0, stagger:0.4, ease:"back"}, "-=3")
-
-
-
-// ;
