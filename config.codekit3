@@ -29,6 +29,16 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/deploy\/design\/Preloader-done.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/deploy\/design\/Preloader-done.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/deploy\/img\/content\/image2.jpg" : {
       "ft" : 16384,
       "iS" : 257124,
@@ -108,7 +118,7 @@
       "cB" : 0,
       "ft" : 2048,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/dev\/content\/preloader.html",
       "oF" : 0
     },
