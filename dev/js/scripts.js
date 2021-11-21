@@ -20,7 +20,6 @@ const mainTL = gsap.timeline();
 
 function snowflakes() {
     const tl = gsap.timeline();
-
     
     return tl;
 }
