@@ -2,19 +2,48 @@
 #preloader{
     position: fixed;
     height: 100vh;
-    width: 102%;
-    z-index: 1000;
+    width: 100%;
 
-    // border: 1px solid red;
 
-    // display: flex;
+    border: 1px solid red;
+
+  
     // justify-content: center;
+
+@include xl{
+    display: grid;
+    grid-template-columns: auto 1200px auto;
+    grid-template-areas: ". preloader .";
+
+}
+   
+
+
+    div{
+        grid-area: preloader;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // height: 100%;
+        // width: 100%;
+
+
+        border: 1px solid red;
+
     
 
+    
+
+        
         >svg{
+
+ 
             .hidden{
                     visibility: hidden;
                 }
         }
+    }
+
+       
     
 }

@@ -71,7 +71,7 @@ mainTL
 
 
 
-// GSDevTools.create();
+GSDevTools.create();
 MorphSVGPlugin.create();
 DrawSVGPlugin.create();
 Flip.create();
