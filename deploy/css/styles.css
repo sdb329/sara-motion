@@ -456,10 +456,21 @@ header div aside a {
 #preloader {
   position: fixed;
   height: 100vh;
-  width: 102%;
-  z-index: 1000;
+  width: 100%;
+  border: 1px solid red;
 }
-#preloader > svg .hidden {
+@media (min-width: 1440px) {
+  #preloader {
+    display: grid;
+    grid-template-columns: auto 1200px auto;
+    grid-template-areas: ". preloader .";
+  }
+}
+#preloader div {
+  grid-area: preloader;
+  border: 1px solid red;
+}
+#preloader div > svg .hidden {
   visibility: hidden;
 }
 
