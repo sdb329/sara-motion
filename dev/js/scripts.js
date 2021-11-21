@@ -150,25 +150,19 @@ function snowflakeSix() {
     return tl;
 }
 
-// function snowflakeFalling() {
+function snowflakeFalling() {
 
-//     const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-//     tl.from("#snowflakes", {
-        
-//     }, "rotate6");
+    tl.to("#snowflakes", {
+        y: "+=1000",
+        duration: 5,
+        stagger: 5
+    });
     
-//     tl.from("#snowflake6", {
-//         duration: 4,
-//         ease: "none",
-//         rotate: 360,
-//         transformOrigin: "center",
-//         repeat: 1
-        
-//     }, "rotate6");
-
-//     return tl;
-// }
+   
+    return tl;
+}
 
 
 mainTL
@@ -178,6 +172,7 @@ mainTL
     .add(snowflakeFour(), "-=7.7")
     .add(snowflakeFive(), "-=7.7")
     .add(snowflakeSix(), "-=7.7")
+    .add(snowflakeFalling(), "-=5")
 
 ;
 
@@ -199,6 +194,12 @@ mainTL
 
 
 
+// tl.to(".fade-up", {
+//     duration: 1,
+//     alpha: 0,
+
+//     y: "-=300"
+// }, "pumpkinDropping");
 
 
 
