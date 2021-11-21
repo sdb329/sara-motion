@@ -21,12 +21,18 @@ const mainTL = gsap.timeline();
 function snowflakes() {
     const tl = gsap.timeline();
 
-    tl.from("#snowflakes", {
-        duration: .1,
-        alpha: 0,
+    tl.from(".snowflake-1", {
+        drawSVG: 0,
+        duration: .3,
         ease: "none"
     });
     
+    tl.from("#snowflake1", {
+        duration: .3,
+        ease: "none",
+        rotate: 60
+        
+    });
     return tl;
 }
 
@@ -45,6 +51,11 @@ mainTL
 //     morphSVG: "#stem-right1",
 //     ease: "none"
 
+// tl.from("#stem2", {
+//     duration: 1,
+//     stagger: 0.1,
+//     drawSVG: 0
+// });
 
 
 
@@ -53,8 +64,7 @@ mainTL
 
 
 
-
-// GSDevTools.create();
+GSDevTools.create();
 MorphSVGPlugin.create();
 DrawSVGPlugin.create();
 Flip.create();
