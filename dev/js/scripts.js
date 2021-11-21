@@ -20,6 +20,7 @@ const mainTL = gsap.timeline();
 
 
 
+
 function dirtAppearing() {
     const tl = gsap.timeline();
 
