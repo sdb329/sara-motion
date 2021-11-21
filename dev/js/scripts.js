@@ -36,8 +36,14 @@ mainTL
 ;
 
 
+// -----------------------------
+// animations to refer to
+// -----------------------------
 
-
+// tl.to("#morph-right-plant1", {
+//     duration: .5,
+//     morphSVG: "#stem-right1",
+//     ease: "none"
 
 
 
