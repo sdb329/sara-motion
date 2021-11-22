@@ -333,11 +333,14 @@ function shivering2() {
 
     tl.to("#cow-body-cold", {
  
-        x:"-=10",
+        x:"-=20",
         duration: .1,
-        ease: "rough"
+        ease: "back",
+        yoyo: true,
+        repeat: 10
     });
     return tl;
+
 }
 
 
