@@ -225,12 +225,120 @@ function snowflakeDrawSVG() {
      {
          duration: 2, ease: "slowMiddle", drawSVG: "90% 100%"});
      
+         tl.set("#drawsvg-snowflake", {
+ 
+            duration: 1,
+            alpha: 0
+        });
+   
+    return tl;
+
+    
+}
+
+
+function cowOutline() {
+
+    const tl = gsap.timeline();
+
+    tl.from("#cowDrawSVG", {
+        duration: 5,
+        drawSVG: "0%"
+    });
+
+    tl.from("#cow-mouth", {
+        duration: .5,
+        drawSVG: "0%"
+    }, "-=3");
+
+    tl.from("#nose", {
+        duration: .5,
+        alpha: 0
+    }, "-=2.5");
+
+    tl.from("#cow-spot", {
+        duration: .5,
+        alpha: 0
+    }, "-=1");
+    tl.from("#closedeye", {
+        duration: .5,
+        drawSVG: "0%"
+    }, "-=.7");
+
+    tl.to("#closedeye", {
+        duration: 0.1,
+        alpha: 0
+    }, "eyeblinking");
+
+    tl.from("#openeye", {
+        duration: 0.1,
+        alpha: 0
+    }, "eyeblinking");
+
+    tl.from(".cowwhole", {
+        duration: 0.1,
+        alpha: 0
+    }, "eyeblinking");
+
+    tl.to("#cowDrawSVG", {
+        duration: 0.1,
+        alpha: 0
+    }, "eyeblinking");
+    
     
    
     return tl;
 }
 
 
+function blue() {
+
+    const tl = gsap.timeline();
+
+    tl.from("#cow-body-cold", {
+        duration: 1,
+        alpha:0
+    });
+
+    tl.to("#cow-body", {
+        duration: 1,
+        alpha:0
+    });
+   
+    return tl;
+}
+
+function shivering() {
+
+    const tl = gsap.timeline();
+
+    tl.from("#shiveringeye", {
+        duration: 0.11,
+        alpha:0
+    }, "shivereye");
+
+    tl.to("#openeye", {
+        duration: 0.11,
+        alpha:0
+    }, "shivereye")
+    
+        
+   
+    return tl;
+}
+
+function shivering2() {
+
+    const tl = gsap.timeline();
+
+    tl.to("#cow-body-cold", {
+ 
+        x:"-=10",
+        duration: .1,
+        ease: "rough"
+    });
+    return tl;
+}
 
 
 
@@ -246,6 +354,11 @@ mainTL
     .add(snowflakeFalling(), "-=5")
     .add(snowflakeBouncingLine(), "-=4.68")
     .add(snowflakeDrawSVG(), "-=5")
+    .add(cowOutline(), "-=3")
+    .add(blue())
+    .add(shivering())
+    .add(shivering2())
+    
 
 ;
 
