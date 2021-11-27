@@ -24,9 +24,15 @@ const mainTL = gsap.timeline();
 function snowflakeOne() {
     const tl = gsap.timeline();
     tl.set("#mask-arctic-foods", {
-        x: "+=620"
+        x: "+=610"
      });
-     tl.set("#arctic-foods-text", {
+
+     tl.set("#tongue", {
+        x: "+=150",
+        alpha: 0
+     }); 
+     
+     tl.set(".letters-move", {
         x: "-=50"
      });
 
@@ -555,6 +561,9 @@ function scarf() {
         alpha: 1
     }, "shivereye2")
 
+    tl.set("#tongue", {
+        alpha: 1
+     }); 
 
     return tl;
 
@@ -594,6 +603,42 @@ function scarf2() {
 
 }
 
+function tongue() {
+
+    const tl = gsap.timeline();
+
+    
+    tl.to("#tongue", {
+
+        x: "-=150",
+        duration: 1,
+        ease: "power1"
+    });
+
+    tl.from("#tongue-line", {
+        drawSVG: 0,
+        duration: .3,
+        ease: "none"
+    }, "-=.3");
+
+
+    tl.from(".snowflake-final", {
+        drawSVG: 0,
+        duration: .3,
+        ease: "none"
+    }, "rotate1");
+
+    tl.from("#snowflakeFinal", {
+        duration: .5,
+        ease: "back",
+        rotate: 90,
+        transformOrigin: "center"
+        }, "rotate1");
+
+    return tl;
+
+}
+
 function arcticFoodsMove() {
 
     const tl = gsap.timeline();
@@ -606,15 +651,35 @@ function arcticFoodsMove() {
         ease: "back"
     }, "sameTimeLetters")
 
-    tl.to("#letters-move",
+    tl.to(".letters-move",
        
     {
 
-        x: "+=160",
-        ease: "arcticFoods",
-        stagger: 1
+        x: "+=250",
+        ease: "back",
+        stagger: .07,
+        duration: .5
     }, "sameTimeLetters")
 
+    tl.to("#a",
+       
+    {
+
+        rotate: -90,
+        ease: "bounce",
+        transformOrigin: "bottom",
+        duration: .5
+    }, "-=.1")
+
+    tl.to("#a",
+       
+    {
+
+        rotate: 0,
+        ease: "power1",
+        transformOrigin: "bottom",
+        duration: 1
+    })
     return tl;
 
 }
@@ -624,7 +689,7 @@ function arcticFoodsMove() {
 
 CustomEase.create("slowMiddle", "M0,0 C0.13,0.428 0.111,0.394 0.462,0.534 0.764,0.654 0.876,0.7 1,1 ");
 
-CustomEase.create("arcticFoods", "M0,0 C0,0 0,0 0,0 0.06,0.954 0.264,1.83 0.488,1.83 0.782,1.83 0.77,1 1,1 1.034,1 1,1 1,1 ");
+CustomEase.create("arcticFoods", "M0,0 C0,0 0.05,0.228 0.09,0.373 0.12,0.484 0.139,0.547 0.18,0.654 0.211,0.737 0.235,0.785 0.275,0.864 0.291,0.896 0.303,0.915 0.325,0.944 0.344,0.97 0.443,1.199 0.59,1.2 0.792,1.2 0.822,1.035 0.91,1.011 0.943,1.002 1,1 1,1 ");
 mainTL
     .add(snowflakeOne())
     .add(snowflakeFour(), "-=7.7")
@@ -642,6 +707,7 @@ mainTL
     .add(shivering3(), "-=2")
     .add(scarf())
     .add(scarf2(), "-=.5")
+    .add(tongue(), "-=.5")
     .add(arcticFoodsMove(), "-=.5")
 
 
