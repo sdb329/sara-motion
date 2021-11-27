@@ -23,6 +23,18 @@ const mainTL = gsap.timeline();
 
 function snowflakeOne() {
     const tl = gsap.timeline();
+    tl.set("#mask1", {
+        x: "-=300"
+     });
+
+     tl.set("#mask2", {
+        y: "-=350"
+     });
+
+
+
+
+
     tl.set("#shiver-right", {
         alpha:0
      });
@@ -540,6 +552,40 @@ function scarf() {
 
 }
 
+function scarf2() {
+
+    const tl = gsap.timeline();
+
+    tl.set("#neck",
+        
+        {
+            x: "-=27"
+        })
+
+        tl.set("#tassels",
+        
+        {
+            x: "-=25"
+        })
+
+    tl.to("#mask1", {
+
+        x: "+=300",
+        duration: 1,
+        ease: "power1"
+    });
+
+    tl.to("#mask2", {
+
+        y: "+=350",
+        duration: 1,
+        ease: "power1"
+    }, "-=.7");
+
+    return tl;
+
+}
+
 
 CustomEase.create("slowMiddle", "M0,0 C0.13,0.428 0.111,0.394 0.462,0.534 0.764,0.654 0.876,0.7 1,1 ");
 
@@ -559,6 +605,7 @@ mainTL
     .add(shivering2(), "-=1")
     .add(shivering3(), "-=2")
     .add(scarf())
+    .add(scarf2(), "-=.5")
 
 
 ;
