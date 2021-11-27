@@ -651,6 +651,8 @@ function arcticFoodsMove() {
         ease: "back"
     }, "sameTimeLetters")
 
+    
+
     tl.to(".letters-move",
        
     {
