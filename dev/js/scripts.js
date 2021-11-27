@@ -23,6 +23,14 @@ const mainTL = gsap.timeline();
 
 function snowflakeOne() {
     const tl = gsap.timeline();
+    tl.set("#mask-arctic-foods", {
+        x: "+=620"
+     });
+     tl.set("#arctic-foods-text", {
+        x: "-=50"
+     });
+
+
     tl.set("#mask1", {
         x: "-=300"
      });
@@ -586,9 +594,37 @@ function scarf2() {
 
 }
 
+function arcticFoodsMove() {
+
+    const tl = gsap.timeline();
+
+   tl.to(".word-move",
+       
+    {
+
+        x: "-=350",
+        ease: "back"
+    }, "sameTimeLetters")
+
+    tl.to("#letters-move",
+       
+    {
+
+        x: "+=160",
+        ease: "arcticFoods",
+        stagger: 1
+    }, "sameTimeLetters")
+
+    return tl;
+
+}
+
+
+
 
 CustomEase.create("slowMiddle", "M0,0 C0.13,0.428 0.111,0.394 0.462,0.534 0.764,0.654 0.876,0.7 1,1 ");
 
+CustomEase.create("arcticFoods", "M0,0 C0,0 0,0 0,0 0.06,0.954 0.264,1.83 0.488,1.83 0.782,1.83 0.77,1 1,1 1.034,1 1,1 1,1 ");
 mainTL
     .add(snowflakeOne())
     .add(snowflakeFour(), "-=7.7")
@@ -606,6 +642,7 @@ mainTL
     .add(shivering3(), "-=2")
     .add(scarf())
     .add(scarf2(), "-=.5")
+    .add(arcticFoodsMove(), "-=.5")
 
 
 ;
