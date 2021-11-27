@@ -23,9 +23,15 @@ const mainTL = gsap.timeline();
 
 function snowflakeOne() {
     const tl = gsap.timeline();
-    // tl.set("#drawsvg-snowflake", {
-    //     alpha:0
-    //  });
+    tl.set("#shiver-right", {
+        alpha:0
+     });
+     tl.set("#shiver-left", {
+        alpha:0
+     });
+
+
+     
     tl.set("#extra-line", {
         alpha: 0
     });
@@ -38,17 +44,17 @@ function snowflakeOne() {
         duration: .3,
         ease: "none"
     }, "rotate1");
-    
+
     tl.from("#snowflake1", {
         duration: 4,
         ease: "none",
         rotate: 360,
         transformOrigin: "center",
         repeat: 1
-        
+
     }, "rotate1");
 
-    
+
     return tl;
 }
 
@@ -61,14 +67,14 @@ function snowflakeTwo() {
         duration: .3,
         ease: "none"
     }, "rotate2");
-    
+
     tl.from("#snowflake2", {
         duration: 4,
         ease: "none",
         rotate: 360,
         transformOrigin: "center",
         repeat: 1
-        
+
     }, "rotate2");
 
     return tl;
@@ -83,14 +89,14 @@ function snowflakeThree() {
         duration: .3,
         ease: "none"
     }, "rotate3");
-    
+
     tl.from("#snowflake3", {
         duration: 4,
         ease: "none",
         rotate: 360,
         transformOrigin: "center",
         repeat: 1
-        
+
     }, "rotate3");
 
     return tl;
@@ -105,14 +111,14 @@ function snowflakeFour() {
         duration: .3,
         ease: "none"
     }, "rotate4");
-    
+
     tl.from("#snowflake4", {
         duration: 4,
         ease: "none",
         rotate: 360,
         transformOrigin: "center",
         repeat: 1
-        
+
     }, "rotate4");
 
     return tl;
@@ -127,14 +133,14 @@ function snowflakeFive() {
         duration: .3,
         ease: "none"
     }, "rotate5");
-    
+
     tl.from("#snowflake5", {
         duration: 4,
         ease: "none",
         rotate: 360,
         transformOrigin: "center",
         repeat: 1
-        
+
     }, "rotate5");
 
     return tl;
@@ -149,14 +155,14 @@ function snowflakeSix() {
         duration: .3,
         ease: "none"
     }, "rotate6");
-    
+
     tl.from("#snowflake6", {
         duration: 4,
         ease: "none",
         rotate: 360,
         transformOrigin: "center",
         repeat: 1
-        
+
     }, "rotate6");
 
     return tl;
@@ -171,8 +177,8 @@ function snowflakeFalling() {
         duration: 5,
         stagger: 0.2
     });
-    
-   
+
+
     return tl;
 }
 
@@ -199,12 +205,12 @@ function snowflakeBouncingLine() {
     //     drawSVG: "0%"
     // }, "stokeSame");
 
-    
 
 
-    
 
-   
+
+
+
     return tl;
 }
 
@@ -213,27 +219,29 @@ function snowflakeDrawSVG() {
     const tl = gsap.timeline();
 
     tl.from("#drawsvg-snowflake", {
-        alpha:0,
+        alpha: 0,
         duration: .01
-     });
- 
-     tl.fromTo("#drawsvg-snowflake", {
- 
-         duration: 2,
-         drawSVG: "0% 8.5%"
-     },
-     {
-         duration: 2, ease: "slowMiddle", drawSVG: "90% 100%"});
-     
-         tl.set("#drawsvg-snowflake", {
- 
-            duration: 1,
-            alpha: 0
-        });
-   
+    });
+
+    tl.fromTo("#drawsvg-snowflake", {
+
+        duration: 2,
+        drawSVG: "0% 8.5%"
+    }, {
+        duration: 2,
+        ease: "slowMiddle",
+        drawSVG: "90% 100%"
+    });
+
+    tl.set("#drawsvg-snowflake", {
+
+        duration: 1,
+        alpha: 0
+    });
+
     return tl;
 
-    
+
 }
 
 
@@ -257,6 +265,14 @@ function cowOutline() {
     }, "-=2.5");
 
     tl.from("#cow-spot", {
+        duration: .5,
+        alpha: 0
+    }, "-=1");
+    tl.from("#horn-front", {
+        duration: .5,
+        alpha: 0
+    });
+    tl.from("#horn-back", {
         duration: .5,
         alpha: 0
     }, "-=1");
@@ -284,9 +300,9 @@ function cowOutline() {
         duration: 0.1,
         alpha: 0
     }, "eyeblinking");
-    
-    
-   
+
+
+
     return tl;
 }
 
@@ -297,14 +313,14 @@ function blue() {
 
     tl.from("#cow-body-cold", {
         duration: 1,
-        alpha:0
+        alpha: 0
     });
 
     tl.to("#cow-body", {
         duration: 1,
-        alpha:0
+        alpha: 0
     });
-   
+
     return tl;
 }
 
@@ -313,17 +329,17 @@ function shivering() {
     const tl = gsap.timeline();
 
     tl.from("#shiveringeye", {
-        duration: 0.11,
-        alpha:0
+        duration: 0.05,
+        alpha: 0
     }, "shivereye");
 
     tl.to("#openeye", {
-        duration: 0.11,
-        alpha:0
+        duration: 0.05,
+        alpha: 0
     }, "shivereye")
-    
-        
-   
+
+
+
     return tl;
 }
 
@@ -331,18 +347,198 @@ function shivering2() {
 
     const tl = gsap.timeline();
 
-    tl.to("#cow-body-cold", {
- 
-        x:"-=20",
+    tl.to(".shiver-cow-whole", {
+
+        x: "-=20",
         duration: .1,
-        ease: "back",
+        ease: "none",
         yoyo: true,
-        repeat: 10
-    });
+        repeat: 20
+    }, "shiversametime");
+
+    tl.to(".shiver-cow-whole", {
+
+        y: "-=20",
+        duration: .3,
+        ease: "none",
+        yoyo: true,
+        repeat: 6
+    }, "shiversametime");
     return tl;
 
 }
 
+function shivering3() {
+
+    const tl = gsap.timeline();
+
+
+    tl.set("#shiver-right", {
+        alpha:1
+     });
+     tl.set("#shiver-left", {
+        alpha:1
+     });
+
+    tl.fromTo(".shiverrrr1", {
+
+        duration: .5,
+        drawSVG: "0% 40%",
+        repeat: 4,
+        alpha: 0
+    }, {
+        duration: .5,
+        drawSVG: "60% 100%",
+        alpha: 1,
+        ease: "none"
+    }, "shiverLines1");
+
+    tl.fromTo(".shiverrrr1", {
+
+        duration: .5,
+        drawSVG: "60% 100%",
+        repeat: 4,
+        alpha: 1
+    }, {
+        duration: .5,
+        drawSVG: "0% 40%",
+        alpha: 1,
+        ease: "none"
+    }, "shiverLines2");
+
+    tl.fromTo(".shiverrrr1", {
+
+        duration: .5,
+        drawSVG: "0% 40%",
+        repeat: 4,
+        alpha: 1
+    }, {
+        duration: .5,
+        drawSVG: "60% 100%",
+        alpha: 1,
+        ease: "none"
+    }, "shiverLines3");
+
+    tl.fromTo(".shiverrrr1", {
+
+        duration: .5,
+        drawSVG: "60% 100%",
+        repeat: 4,
+        alpha: 1
+    }, {
+        duration: .5,
+        drawSVG: "0% 40%",
+        alpha: 0,
+        ease: "none"
+    }, "shiverLines4");
+
+
+
+
+
+
+
+
+
+
+
+
+    tl.fromTo(".shiverrrr2", {
+
+        duration: .5,
+        drawSVG: "60% 100%",
+        ease: "none",
+        alpha: 0
+    }, {
+        duration: .5,
+        drawSVG: "0% 40%",
+        alpha: 1,
+        ease: "none"
+    }, "shiverLines1");
+
+    tl.fromTo(".shiverrrr2", {
+
+        duration: .5,
+        drawSVG: "0% 40%",
+        ease: "none",
+        alpha: 1
+    }, {
+        duration: .5,
+        drawSVG: "60% 100%",
+        alpha: 1,
+        ease: "none"
+    }, "shiverLines2");
+
+    tl.fromTo(".shiverrrr2", {
+
+        duration: .5,
+        drawSVG: "60% 100%",
+        ease: "none",
+        alpha: 1
+    }, {
+        duration: .5,
+        drawSVG: "0% 40%",
+        alpha: 1,
+        ease: "none"
+    }, "shiverLines3");
+
+    tl.fromTo(".shiverrrr2", {
+
+        duration: .5,
+        drawSVG: "0% 40%",
+        ease: "none",
+        alpha: 1
+    }, {
+        duration: .5,
+        drawSVG: "60% 100%",
+        alpha: 0,
+        ease: "none"
+    }, "shiverLines4");
+
+
+
+
+    return tl;
+
+}
+
+
+function scarf() {
+
+    const tl = gsap.timeline();
+
+    tl.to(".shiver-cow-whole", {
+
+        y: "+=20",
+        duration: 1,
+        ease: "back"
+    }, "warmth");
+
+    tl.to("#cow-body", {
+        duration: 1,
+        alpha: 1
+    }, "warmth");
+
+    tl.to("#cow-body-cold", {
+        duration: 1,
+        alpha: 0
+    }, "warmth");
+
+
+    tl.to("#shiveringeye", {
+        duration: 0.05,
+        alpha: 0
+    }, "shivereye2");
+
+    tl.to("#openeye", {
+        duration: 0.05,
+        alpha: 1
+    }, "shivereye2")
+
+
+    return tl;
+
+}
 
 
 CustomEase.create("slowMiddle", "M0,0 C0.13,0.428 0.111,0.394 0.462,0.534 0.764,0.654 0.876,0.7 1,1 ");
@@ -359,9 +555,11 @@ mainTL
     .add(snowflakeDrawSVG(), "-=5")
     .add(cowOutline(), "-=3")
     .add(blue())
-    .add(shivering())
-    .add(shivering2())
-    
+    .add(shivering(), "-=1.5")
+    .add(shivering2(), "-=1")
+    .add(shivering3(), "-=2")
+    .add(scarf())
+
 
 ;
 
