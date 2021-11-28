@@ -652,7 +652,6 @@ function arcticFoodsMove() {
     }, "sameTimeLetters")
 
     
-
     tl.to(".letters-move",
        
     {
@@ -682,10 +681,10 @@ function arcticFoodsMove() {
         transformOrigin: "bottom",
         duration: 1
     })
+
     return tl;
 
 }
-
 
 
 
@@ -711,6 +710,7 @@ mainTL
     .add(scarf2(), "-=.5")
     .add(tongue(), "-=.5")
     .add(arcticFoodsMove(), "-=.5")
+    
 
 
 ;
