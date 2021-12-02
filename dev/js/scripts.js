@@ -648,9 +648,32 @@ function arcticFoodsMove() {
     {
 
         x: "-=350",
-        ease: "back"
+        ease: "back",
+        duration: .5
     }, "sameTimeLetters")
 
+
+tl.to("#bottom", {
+    rotate: -15,
+    transformOrigin: "50% 20%",
+    y: "+=26",
+    x: "+=9",
+    duration: .25,
+    ease: "power4"
+
+
+}, "-=.5")
+
+tl.to("#bottom", {
+    rotate: 5,
+    transformOrigin: "50% 20%",
+    y: "-=10",
+    x: "-=6",
+    duration: .25,
+    ease: "arcticFoods"
+
+
+}, "-=.15")
     
     tl.to(".letters-move",
        
@@ -677,16 +700,43 @@ function arcticFoodsMove() {
     {
 
         rotate: 0,
-        ease: "power1",
+        ease: "back",
         transformOrigin: "bottom",
         duration: 1
-    })
+    }, "+=2")
+
+    tl.to(".word-move",
+       
+    {
+        x: "-=40",
+        ease: "power4",
+        duration: .5
+    }, "-=1.7")
+
+    tl.to(".word-move",
+       
+    {
+        x: "+=50",
+        ease: "back",
+        duration: .25
+    }, ">")
+
+    tl.to(".word-move",
+       
+    {
+        x: "-=10",
+        duration: .5
+    }, ">")
+
 
     return tl;
 
 }
 
+CustomEase.create("CowA", "M0,0 C0,0 0.202,-0.232 0.408,0.018 0.636,0.296 0.407,1.587 0.8,1.588 0.92,1.588 1,1.526 1,1.526 ");
 
+
+CustomEase.create("scarfEase1", "M0,0 C0,0 0.05,0.228 0.09,0.373 0.12,0.484 0.138,0.548 0.18,0.654 0.28,0.912 0.462,1.127 0.686,1.128 0.922,1.128 1,1 1,1 ");
 
 CustomEase.create("slowMiddle", "M0,0 C0.13,0.428 0.111,0.394 0.462,0.534 0.764,0.654 0.876,0.7 1,1 ");
 
