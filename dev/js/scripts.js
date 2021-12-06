@@ -18,7 +18,7 @@ gsap.registerPlugin(GSDevTools, MorphSVGPlugin, DrawSVGPlugin, Flip, MotionPathH
 
 
 const mainTL = gsap.timeline();
-
+mainTL.timeScale( 1.4 );
 
 
 function snowflakeOne() {
@@ -72,11 +72,11 @@ function snowflakeOne() {
     }, "rotate1");
 
     tl.from("#snowflake1", {
-        duration: 4,
+        duration: 2,
         ease: "none",
-        rotate: 360,
+        rotate: 180,
         transformOrigin: "center",
-        repeat: 1
+        repeat: 2
 
     }, "rotate1");
 
@@ -95,9 +95,9 @@ function snowflakeTwo() {
     }, "rotate2");
 
     tl.from("#snowflake2", {
-        duration: 4,
+        duration: 2,
         ease: "none",
-        rotate: 360,
+        rotate: 180,
         transformOrigin: "center",
         repeat: 1
 
@@ -117,9 +117,9 @@ function snowflakeThree() {
     }, "rotate3");
 
     tl.from("#snowflake3", {
-        duration: 4,
+        duration: 2,
         ease: "none",
-        rotate: 360,
+        rotate: 180,
         transformOrigin: "center",
         repeat: 1
 
@@ -139,9 +139,9 @@ function snowflakeFour() {
     }, "rotate4");
 
     tl.from("#snowflake4", {
-        duration: 4,
+        duration: 2,
         ease: "none",
-        rotate: 360,
+        rotate: 180,
         transformOrigin: "center",
         repeat: 1
 
@@ -161,9 +161,9 @@ function snowflakeFive() {
     }, "rotate5");
 
     tl.from("#snowflake5", {
-        duration: 4,
+        duration: 2,
         ease: "none",
-        rotate: 360,
+        rotate: 180,
         transformOrigin: "center",
         repeat: 1
 
@@ -183,9 +183,9 @@ function snowflakeSix() {
     }, "rotate6");
 
     tl.from("#snowflake6", {
-        duration: 4,
+        duration: 2,
         ease: "none",
-        rotate: 360,
+        rotate: 180,
         transformOrigin: "center",
         repeat: 1
 
@@ -197,6 +197,8 @@ function snowflakeSix() {
 function snowflakeFalling() {
 
     const tl = gsap.timeline();
+
+    
 
     tl.to(".snowflake-fall", {
         y: "+=1000",
@@ -379,7 +381,7 @@ function shivering2() {
         duration: .1,
         ease: "none",
         yoyo: true,
-        repeat: 20
+        repeat: 35
     }, "shiversametime");
 
     tl.to(".shiver-cow-whole", {
@@ -388,7 +390,7 @@ function shivering2() {
         duration: .3,
         ease: "none",
         yoyo: true,
-        repeat: 6
+        repeat: 10
     }, "shiversametime");
     return tl;
 
@@ -408,12 +410,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr1", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
         repeat: 4,
         alpha: 0
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
         alpha: 1,
         ease: "none"
@@ -421,12 +423,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr1", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
-        repeat: 4,
+        repeat: 2,
         alpha: 1
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
         alpha: 1,
         ease: "none"
@@ -434,12 +436,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr1", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
-        repeat: 4,
+        repeat: 2,
         alpha: 1
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
         alpha: 1,
         ease: "none"
@@ -447,12 +449,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr1", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
-        repeat: 4,
+        repeat: 2,
         alpha: 1
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
         alpha: 0,
         ease: "none"
@@ -471,12 +473,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr2", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
         ease: "none",
         alpha: 0
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
         alpha: 1,
         ease: "none"
@@ -484,12 +486,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr2", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
         ease: "none",
         alpha: 1
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
         alpha: 1,
         ease: "none"
@@ -497,12 +499,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr2", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
         ease: "none",
         alpha: 1
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
         alpha: 1,
         ease: "none"
@@ -510,12 +512,12 @@ function shivering3() {
 
     tl.fromTo(".shiverrrr2", {
 
-        duration: .5,
+        duration: 1,
         drawSVG: "0% 40%",
         ease: "none",
         alpha: 1
     }, {
-        duration: .5,
+        duration: 1,
         drawSVG: "60% 100%",
         alpha: 0,
         ease: "none"
@@ -576,13 +578,13 @@ function scarf2() {
     tl.set("#neck",
         
         {
-            x: "-=27"
+            x: "-=8"
         })
 
         tl.set("#tassels",
         
         {
-            x: "-=25"
+            x: "-=7"
         })
 
     tl.to("#mask1", {
@@ -647,7 +649,7 @@ function arcticFoodsMove() {
        
     {
 
-        x: "-=350",
+        x: "-=375",
         ease: "back",
         duration: .5
     }, "sameTimeLetters")
@@ -743,19 +745,19 @@ CustomEase.create("slowMiddle", "M0,0 C0.13,0.428 0.111,0.394 0.462,0.534 0.764,
 CustomEase.create("arcticFoods", "M0,0 C0,0 0.05,0.228 0.09,0.373 0.12,0.484 0.139,0.547 0.18,0.654 0.211,0.737 0.235,0.785 0.275,0.864 0.291,0.896 0.303,0.915 0.325,0.944 0.344,0.97 0.443,1.199 0.59,1.2 0.792,1.2 0.822,1.035 0.91,1.011 0.943,1.002 1,1 1,1 ");
 mainTL
     .add(snowflakeOne())
-    .add(snowflakeFour(), "-=7.7")
-    .add(snowflakeTwo(), "-=7.7")
-    .add(snowflakeFive(), "-=7.7")
-    .add(snowflakeThree(), "-=7.7")
-    .add(snowflakeSix(), "-=7.7")
-    .add(snowflakeFalling(), "-=5")
+    .add(snowflakeFour(), "-=5.6")
+    .add(snowflakeTwo(), "-=5.3")
+    .add(snowflakeFive(), "-=5")
+    .add(snowflakeThree(), "-=4.7")
+    .add(snowflakeSix(), "-=4.4")
+    .add(snowflakeFalling(), "-=4")
     .add(snowflakeBouncingLine(), "-=4.68")
     .add(snowflakeDrawSVG(), "-=5")
     .add(cowOutline(), "-=3")
     .add(blue())
     .add(shivering(), "-=1.5")
     .add(shivering2(), "-=1")
-    .add(shivering3(), "-=2")
+    .add(shivering3(), "-=3.8")
     .add(scarf())
     .add(scarf2(), "-=.5")
     .add(tongue(), "-=.5")
