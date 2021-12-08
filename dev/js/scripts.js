@@ -67,7 +67,7 @@ function snowflakeOne() {
 
     tl.from(".snowflake-1", {
         drawSVG: 0,
-        duration: .3,
+        duration: .5,
         ease: "none"
     }, "rotate1");
 
@@ -202,7 +202,7 @@ function snowflakeFalling() {
 
     tl.to(".snowflake-fall", {
         y: "+=1000",
-        duration: 5,
+        duration: 4,
         stagger: 0.2
     });
 
